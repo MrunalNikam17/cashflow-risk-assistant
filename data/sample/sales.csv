@@ -1,0 +1,365 @@
+transaction_id,date,payment_channel,description,amount,direction
+TXN-5001,2025-10-01,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4746.39,inflow
+TXN-5002,2025-10-01,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2555.75,inflow
+TXN-5003,2025-10-02,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4081.0,inflow
+TXN-5004,2025-10-02,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2197.46,inflow
+TXN-5005,2025-10-03,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6610.87,inflow
+TXN-5006,2025-10-03,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3559.7,inflow
+TXN-5007,2025-10-04,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6368.61,inflow
+TXN-5008,2025-10-04,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3429.25,inflow
+TXN-5009,2025-10-05,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,7137.87,inflow
+TXN-5010,2025-10-05,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3843.47,inflow
+TXN-5012,2025-10-06,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1834.63,inflow
+TXN-5011,2025-10-06,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3407.17,inflow
+TXN-5013,2025-10-07,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,2916.71,inflow
+TXN-5014,2025-10-07,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1570.54,inflow
+TXN-5015,2025-10-08,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3274.73,inflow
+TXN-5016,2025-10-08,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1763.32,inflow
+TXN-5017,2025-10-09,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,2966.34,inflow
+TXN-5018,2025-10-09,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1597.26,inflow
+TXN-5019,2025-10-10,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5363.07,inflow
+TXN-5020,2025-10-10,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2887.81,inflow
+TXN-5022,2025-10-11,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4771.18,inflow
+TXN-5021,2025-10-11,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8860.77,inflow
+TXN-5023,2025-10-12,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,7716.42,inflow
+TXN-5024,2025-10-12,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4154.99,inflow
+TXN-5025,2025-10-13,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3596.22,inflow
+TXN-5026,2025-10-13,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1936.43,inflow
+TXN-5027,2025-10-14,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3220.25,inflow
+TXN-5028,2025-10-14,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1733.98,inflow
+TXN-5029,2025-10-15,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3354.73,inflow
+TXN-5030,2025-10-15,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1806.39,inflow
+TXN-5032,2025-10-16,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2650.18,inflow
+TXN-5031,2025-10-16,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4921.77,inflow
+TXN-5033,2025-10-17,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6445.5,inflow
+TXN-5034,2025-10-17,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3470.66,inflow
+TXN-5035,2025-10-18,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8748.58,inflow
+TXN-5036,2025-10-18,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4710.77,inflow
+TXN-5037,2025-10-19,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6898.06,inflow
+TXN-5038,2025-10-19,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3714.34,inflow
+TXN-5039,2025-10-20,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4436.16,inflow
+TXN-5040,2025-10-20,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2388.7,inflow
+TXN-5041,2025-10-21,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3112.36,inflow
+TXN-5042,2025-10-21,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1675.89,inflow
+TXN-5044,2025-10-22,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1948.11,inflow
+TXN-5043,2025-10-22,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3617.93,inflow
+TXN-5045,2025-10-23,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5045.48,inflow
+TXN-5046,2025-10-23,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2716.8,inflow
+TXN-5047,2025-10-24,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6422.0,inflow
+TXN-5048,2025-10-24,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3458.0,inflow
+TXN-5049,2025-10-25,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8528.11,inflow
+TXN-5050,2025-10-25,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4592.06,inflow
+TXN-5051,2025-10-26,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,9067.5,inflow
+TXN-5052,2025-10-26,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4882.5,inflow
+TXN-5054,2025-10-27,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2531.99,inflow
+TXN-5053,2025-10-27,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4702.27,inflow
+TXN-5055,2025-10-28,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4545.84,inflow
+TXN-5056,2025-10-28,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2447.76,inflow
+TXN-5057,2025-10-29,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3265.97,inflow
+TXN-5058,2025-10-29,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1758.6,inflow
+TXN-5059,2025-10-30,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,2805.11,inflow
+TXN-5060,2025-10-30,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1510.45,inflow
+TXN-5061,2025-10-31,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5472.7,inflow
+TXN-5062,2025-10-31,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2946.84,inflow
+TXN-5064,2025-11-01,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4917.64,inflow
+TXN-5063,2025-11-01,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,9132.76,inflow
+TXN-5066,2025-11-02,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4756.23,inflow
+TXN-5065,2025-11-02,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8833.0,inflow
+TXN-5067,2025-11-03,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6170.51,inflow
+TXN-5068,2025-11-03,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3322.58,inflow
+TXN-5069,2025-11-04,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5975.88,inflow
+TXN-5070,2025-11-04,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3217.78,inflow
+TXN-5071,2025-11-05,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4332.93,inflow
+TXN-5072,2025-11-05,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2333.12,inflow
+TXN-5073,2025-11-06,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5329.66,inflow
+TXN-5074,2025-11-06,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2869.82,inflow
+TXN-5076,2025-11-07,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3841.4,inflow
+TXN-5075,2025-11-07,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,7134.03,inflow
+TXN-5077,2025-11-08,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,12548.7,inflow
+TXN-5078,2025-11-08,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,6756.99,inflow
+TXN-5079,2025-11-09,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,10142.06,inflow
+TXN-5080,2025-11-09,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,5461.11,inflow
+TXN-5081,2025-11-10,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4187.27,inflow
+TXN-5082,2025-11-10,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2254.69,inflow
+TXN-5083,2025-11-11,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4133.89,inflow
+TXN-5084,2025-11-11,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2225.94,inflow
+TXN-5085,2025-11-12,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5054.5,inflow
+TXN-5086,2025-11-12,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2721.65,inflow
+TXN-5087,2025-11-13,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4181.02,inflow
+TXN-5088,2025-11-13,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2251.32,inflow
+TXN-5090,2025-11-14,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4213.4,inflow
+TXN-5089,2025-11-14,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,7824.89,inflow
+TXN-5091,2025-11-15,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,12460.38,inflow
+TXN-5092,2025-11-15,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,6709.43,inflow
+TXN-5093,2025-11-16,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,9828.08,inflow
+TXN-5094,2025-11-16,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,5292.05,inflow
+TXN-5095,2025-11-17,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4054.01,inflow
+TXN-5096,2025-11-17,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2182.93,inflow
+TXN-5097,2025-11-18,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6330.3,inflow
+TXN-5098,2025-11-18,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3408.62,inflow
+TXN-5100,2025-11-19,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2640.0,inflow
+TXN-5099,2025-11-19,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4902.86,inflow
+TXN-5101,2025-11-20,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3678.41,inflow
+TXN-5102,2025-11-20,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1980.68,inflow
+TXN-5103,2025-11-21,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5859.77,inflow
+TXN-5104,2025-11-21,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3155.26,inflow
+TXN-5105,2025-11-22,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8297.83,inflow
+TXN-5106,2025-11-22,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4468.06,inflow
+TXN-5107,2025-11-23,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,11032.45,inflow
+TXN-5108,2025-11-23,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,5940.55,inflow
+TXN-5109,2025-11-24,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5729.33,inflow
+TXN-5110,2025-11-24,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3085.02,inflow
+TXN-5112,2025-11-25,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2502.4,inflow
+TXN-5111,2025-11-25,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4647.32,inflow
+TXN-5113,2025-11-26,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3598.32,inflow
+TXN-5114,2025-11-26,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1937.56,inflow
+TXN-5115,2025-11-27,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4528.74,inflow
+TXN-5116,2025-11-27,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2438.55,inflow
+TXN-5117,2025-11-28,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,9329.57,inflow
+TXN-5118,2025-11-28,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,5023.61,inflow
+TXN-5119,2025-11-29,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,10513.14,inflow
+TXN-5120,2025-11-29,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,5660.92,inflow
+TXN-5122,2025-11-30,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,6917.75,inflow
+TXN-5121,2025-11-30,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,12847.26,inflow
+TXN-5124,2025-12-01,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3193.23,inflow
+TXN-5123,2025-12-01,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5930.28,inflow
+TXN-5125,2025-12-02,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3446.08,inflow
+TXN-5126,2025-12-02,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1855.58,inflow
+TXN-5127,2025-12-03,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5520.61,inflow
+TXN-5128,2025-12-03,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2972.64,inflow
+TXN-5129,2025-12-04,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5406.5,inflow
+TXN-5130,2025-12-04,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2911.19,inflow
+TXN-5131,2025-12-05,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,7650.8,inflow
+TXN-5132,2025-12-05,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4119.66,inflow
+TXN-5134,2025-12-06,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4915.03,inflow
+TXN-5133,2025-12-06,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,9127.92,inflow
+TXN-5136,2025-12-07,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,5978.99,inflow
+TXN-5135,2025-12-07,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,11103.83,inflow
+TXN-5137,2025-12-08,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3738.79,inflow
+TXN-5138,2025-12-08,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2013.19,inflow
+TXN-5139,2025-12-09,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4684.19,inflow
+TXN-5140,2025-12-09,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2522.26,inflow
+TXN-5141,2025-12-10,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4739.64,inflow
+TXN-5142,2025-12-10,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2552.11,inflow
+TXN-5143,2025-12-11,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6202.41,inflow
+TXN-5144,2025-12-11,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3339.76,inflow
+TXN-5145,2025-12-12,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8889.84,inflow
+TXN-5146,2025-12-12,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4786.84,inflow
+TXN-5148,2025-12-13,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4905.26,inflow
+TXN-5147,2025-12-13,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,9109.77,inflow
+TXN-5149,2025-12-14,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,10362.47,inflow
+TXN-5150,2025-12-14,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,5579.79,inflow
+TXN-5151,2025-12-15,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3935.06,inflow
+TXN-5152,2025-12-15,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2118.88,inflow
+TXN-5153,2025-12-16,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6081.94,inflow
+TXN-5154,2025-12-16,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3274.89,inflow
+TXN-5155,2025-12-17,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5958.77,inflow
+TXN-5156,2025-12-17,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3208.57,inflow
+TXN-5158,2025-12-18,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2307.55,inflow
+TXN-5157,2025-12-18,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4285.45,inflow
+TXN-5159,2025-12-19,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8023.66,inflow
+TXN-5160,2025-12-19,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4320.43,inflow
+TXN-5161,2025-12-20,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,10934.87,inflow
+TXN-5162,2025-12-20,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,5888.01,inflow
+TXN-5163,2025-12-21,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8525.93,inflow
+TXN-5164,2025-12-21,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4590.89,inflow
+TXN-5165,2025-12-22,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5642.84,inflow
+TXN-5166,2025-12-22,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3038.45,inflow
+TXN-5168,2025-12-23,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2687.02,inflow
+TXN-5167,2025-12-23,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4990.18,inflow
+TXN-5169,2025-12-24,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5689.98,inflow
+TXN-5170,2025-12-24,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3063.84,inflow
+TXN-5171,2025-12-25,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4963.78,inflow
+TXN-5172,2025-12-25,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2672.81,inflow
+TXN-5173,2025-12-26,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5689.59,inflow
+TXN-5174,2025-12-26,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3063.63,inflow
+TXN-5175,2025-12-27,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,9430.7,inflow
+TXN-5176,2025-12-27,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,5078.07,inflow
+TXN-5177,2025-12-28,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,7821.61,inflow
+TXN-5178,2025-12-28,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4211.64,inflow
+TXN-5179,2025-12-29,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6130.11,inflow
+TXN-5180,2025-12-29,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3300.83,inflow
+TXN-5182,2025-12-30,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3221.49,inflow
+TXN-5181,2025-12-30,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5982.76,inflow
+TXN-5183,2025-12-31,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5845.12,inflow
+TXN-5184,2025-12-31,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3147.37,inflow
+TXN-5185,2026-01-01,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3449.58,inflow
+TXN-5186,2026-01-01,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1857.47,inflow
+TXN-5187,2026-01-02,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4719.43,inflow
+TXN-5188,2026-01-02,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2541.23,inflow
+TXN-5189,2026-01-03,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,9884.59,inflow
+TXN-5190,2026-01-03,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,5322.47,inflow
+TXN-5192,2026-01-04,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,5479.31,inflow
+TXN-5191,2026-01-04,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,10175.86,inflow
+TXN-5193,2026-01-05,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,2930.43,inflow
+TXN-5194,2026-01-05,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1577.92,inflow
+TXN-5195,2026-01-06,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3867.22,inflow
+TXN-5196,2026-01-06,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2082.35,inflow
+TXN-5197,2026-01-07,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,2891.96,inflow
+TXN-5198,2026-01-07,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1557.21,inflow
+TXN-5199,2026-01-08,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4509.81,inflow
+TXN-5200,2026-01-08,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2428.36,inflow
+TXN-5201,2026-01-09,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6790.07,inflow
+TXN-5202,2026-01-09,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3656.19,inflow
+TXN-5204,2026-01-10,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3617.09,inflow
+TXN-5203,2026-01-10,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6717.45,inflow
+TXN-5205,2026-01-11,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8183.07,inflow
+TXN-5206,2026-01-11,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4406.27,inflow
+TXN-5207,2026-01-12,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4016.54,inflow
+TXN-5208,2026-01-12,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2162.75,inflow
+TXN-5209,2026-01-13,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3350.23,inflow
+TXN-5210,2026-01-13,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1803.97,inflow
+TXN-5211,2026-01-14,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4771.49,inflow
+TXN-5212,2026-01-14,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2569.27,inflow
+TXN-5214,2026-01-15,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2003.15,inflow
+TXN-5213,2026-01-15,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3720.14,inflow
+TXN-5216,2026-01-16,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2783.58,inflow
+TXN-5215,2026-01-16,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5169.51,inflow
+TXN-5217,2026-01-17,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8453.53,inflow
+TXN-5218,2026-01-17,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4551.9,inflow
+TXN-5219,2026-01-18,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,9258.96,inflow
+TXN-5220,2026-01-18,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4985.59,inflow
+TXN-5221,2026-01-19,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3200.69,inflow
+TXN-5222,2026-01-19,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1723.45,inflow
+TXN-5223,2026-01-20,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3459.42,inflow
+TXN-5224,2026-01-20,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1862.76,inflow
+TXN-5226,2026-01-21,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2723.89,inflow
+TXN-5225,2026-01-21,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5058.65,inflow
+TXN-5228,2026-01-22,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2288.85,inflow
+TXN-5227,2026-01-22,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4250.71,inflow
+TXN-5229,2026-01-23,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5831.44,inflow
+TXN-5230,2026-01-23,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3140.01,inflow
+TXN-5231,2026-01-24,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8361.76,inflow
+TXN-5232,2026-01-24,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4502.49,inflow
+TXN-5233,2026-01-25,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6686.24,inflow
+TXN-5234,2026-01-25,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3600.28,inflow
+TXN-5235,2026-01-26,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3255.79,inflow
+TXN-5236,2026-01-26,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1753.12,inflow
+TXN-5237,2026-01-27,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3521.12,inflow
+TXN-5238,2026-01-27,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1895.99,inflow
+TXN-5240,2026-01-28,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2211.27,inflow
+TXN-5239,2026-01-28,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4106.64,inflow
+TXN-5241,2026-01-29,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3268.47,inflow
+TXN-5242,2026-01-29,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1759.94,inflow
+TXN-5243,2026-01-30,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5194.14,inflow
+TXN-5244,2026-01-30,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2796.84,inflow
+TXN-5245,2026-01-31,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6474.95,inflow
+TXN-5246,2026-01-31,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3486.51,inflow
+TXN-5247,2026-02-01,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,7515.2,inflow
+TXN-5248,2026-02-01,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4046.65,inflow
+TXN-5250,2026-02-02,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1494.7,inflow
+TXN-5249,2026-02-02,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,2775.87,inflow
+TXN-5252,2026-02-03,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2219.2,inflow
+TXN-5251,2026-02-03,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4121.38,inflow
+TXN-5253,2026-02-04,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4030.31,inflow
+TXN-5254,2026-02-04,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2170.17,inflow
+TXN-5255,2026-02-05,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,2461.44,inflow
+TXN-5256,2026-02-05,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1325.39,inflow
+TXN-5257,2026-02-06,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4459.24,inflow
+TXN-5258,2026-02-06,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2401.13,inflow
+TXN-5259,2026-02-07,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,7651.22,inflow
+TXN-5260,2026-02-07,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4119.89,inflow
+TXN-5261,2026-02-08,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6018.13,inflow
+TXN-5262,2026-02-08,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3240.53,inflow
+TXN-5264,2026-02-09,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1391.21,inflow
+TXN-5263,2026-02-09,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,2583.67,inflow
+TXN-5265,2026-02-10,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4181.24,inflow
+TXN-5266,2026-02-10,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2251.44,inflow
+TXN-5267,2026-02-11,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3456.3,inflow
+TXN-5268,2026-02-11,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1861.09,inflow
+TXN-5269,2026-02-12,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3260.64,inflow
+TXN-5270,2026-02-12,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1755.73,inflow
+TXN-5271,2026-02-13,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5818.26,inflow
+TXN-5272,2026-02-13,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3132.91,inflow
+TXN-5274,2026-02-14,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4387.75,inflow
+TXN-5273,2026-02-14,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8148.67,inflow
+TXN-5275,2026-02-15,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5932.56,inflow
+TXN-5276,2026-02-15,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3194.46,inflow
+TXN-5277,2026-02-16,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,2513.3,inflow
+TXN-5278,2026-02-16,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1353.31,inflow
+TXN-5279,2026-02-17,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3177.86,inflow
+TXN-5280,2026-02-17,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1711.16,inflow
+TXN-5281,2026-02-18,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3163.0,inflow
+TXN-5282,2026-02-18,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1703.15,inflow
+TXN-5283,2026-02-19,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3249.41,inflow
+TXN-5284,2026-02-19,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1749.68,inflow
+TXN-5286,2026-02-20,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3058.55,inflow
+TXN-5285,2026-02-20,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5680.16,inflow
+TXN-5287,2026-02-21,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,7666.97,inflow
+TXN-5288,2026-02-21,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4128.37,inflow
+TXN-5289,2026-02-22,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8783.13,inflow
+TXN-5290,2026-02-22,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4729.38,inflow
+TXN-5291,2026-02-23,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,2516.25,inflow
+TXN-5292,2026-02-23,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1354.91,inflow
+TXN-5293,2026-02-24,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3121.31,inflow
+TXN-5294,2026-02-24,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1680.71,inflow
+TXN-5296,2026-02-25,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1612.89,inflow
+TXN-5295,2026-02-25,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,2995.37,inflow
+TXN-5297,2026-02-26,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4034.37,inflow
+TXN-5298,2026-02-26,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2172.35,inflow
+TXN-5299,2026-02-27,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4485.72,inflow
+TXN-5300,2026-02-27,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2415.39,inflow
+TXN-5301,2026-02-28,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5931.84,inflow
+TXN-5302,2026-02-28,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3194.07,inflow
+TXN-5303,2026-03-01,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8070.39,inflow
+TXN-5304,2026-03-01,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4345.6,inflow
+TXN-5306,2026-03-02,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2001.57,inflow
+TXN-5305,2026-03-02,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3717.2,inflow
+TXN-5307,2026-03-03,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3381.8,inflow
+TXN-5308,2026-03-03,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1820.97,inflow
+TXN-5309,2026-03-04,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3314.55,inflow
+TXN-5310,2026-03-04,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1784.76,inflow
+TXN-5311,2026-03-05,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4890.44,inflow
+TXN-5312,2026-03-05,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2633.31,inflow
+TXN-5313,2026-03-06,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5846.16,inflow
+TXN-5314,2026-03-06,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3147.93,inflow
+TXN-5315,2026-03-07,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,9814.2,inflow
+TXN-5316,2026-03-07,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,5284.57,inflow
+TXN-5318,2026-03-08,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4576.99,inflow
+TXN-5317,2026-03-08,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8500.12,inflow
+TXN-5319,2026-03-09,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,2848.38,inflow
+TXN-5320,2026-03-09,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1533.74,inflow
+TXN-5321,2026-03-10,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5068.32,inflow
+TXN-5322,2026-03-10,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2729.1,inflow
+TXN-5323,2026-03-11,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4686.3,inflow
+TXN-5324,2026-03-11,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2523.39,inflow
+TXN-5325,2026-03-12,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4997.45,inflow
+TXN-5326,2026-03-12,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2690.94,inflow
+TXN-5328,2026-03-13,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3909.03,inflow
+TXN-5327,2026-03-13,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,7259.62,inflow
+TXN-5329,2026-03-14,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,9760.74,inflow
+TXN-5330,2026-03-14,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,5255.78,inflow
+TXN-5331,2026-03-15,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,6877.66,inflow
+TXN-5332,2026-03-15,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3703.36,inflow
+TXN-5333,2026-03-16,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3866.4,inflow
+TXN-5334,2026-03-16,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2081.91,inflow
+TXN-5335,2026-03-17,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3230.17,inflow
+TXN-5336,2026-03-17,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1739.32,inflow
+TXN-5338,2026-03-18,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1975.31,inflow
+TXN-5337,2026-03-18,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3668.43,inflow
+TXN-5340,2026-03-19,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1543.88,inflow
+TXN-5339,2026-03-19,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,2867.21,inflow
+TXN-5341,2026-03-20,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,5658.5,inflow
+TXN-5342,2026-03-20,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3046.88,inflow
+TXN-5343,2026-03-21,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,10337.93,inflow
+TXN-5344,2026-03-21,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,5566.58,inflow
+TXN-5345,2026-03-22,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,7295.48,inflow
+TXN-5346,2026-03-22,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,3928.34,inflow
+TXN-5347,2026-03-23,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4564.73,inflow
+TXN-5348,2026-03-23,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2457.93,inflow
+TXN-5350,2026-03-24,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2043.31,inflow
+TXN-5349,2026-03-24,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3794.72,inflow
+TXN-5351,2026-03-25,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3719.84,inflow
+TXN-5352,2026-03-25,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2002.99,inflow
+TXN-5353,2026-03-26,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,4970.12,inflow
+TXN-5354,2026-03-26,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,2676.22,inflow
+TXN-5355,2026-03-27,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,7461.61,inflow
+TXN-5356,2026-03-27,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4017.79,inflow
+TXN-5357,2026-03-28,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,8523.12,inflow
+TXN-5358,2026-03-28,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4589.37,inflow
+TXN-5359,2026-03-29,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,9210.27,inflow
+TXN-5360,2026-03-29,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,4959.38,inflow
+TXN-5361,2026-03-30,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3092.22,inflow
+TXN-5362,2026-03-30,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1665.04,inflow
+TXN-5363,2026-03-31,POS Terminal / Credit Card,Daily Point-of-Sale Card Settlements & Merchant Batch Inflow,3424.3,inflow
+TXN-5364,2026-03-31,UPI / QR / Cash Deposit,Counter UPI QR & Daily Retail Cash Sales Register Settlement,1843.85,inflow

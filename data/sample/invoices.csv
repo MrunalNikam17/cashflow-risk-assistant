@@ -1,0 +1,16 @@
+invoice_number,invoice_date,due_date,client_name,amount,status,payment_date,description
+INV-202,2025-10-12,2025-11-06,Silverline Event Organizers,19371.97,PAID,2025-11-03,B2B Bulk Corporate Order Invoice #202 - Silverline Event Organizers
+INV-201,2025-10-20,2025-11-14,Metropolis Corporate Gifts LLP,35657.69,PAID,2025-11-09,B2B Bulk Corporate Order Invoice #201 - Metropolis Corporate Gifts LLP
+INV-203,2025-11-03,2025-11-28,Metropolis Corporate Gifts LLP,41058.69,PAID,2025-11-27,B2B Bulk Corporate Order Invoice #203 - Metropolis Corporate Gifts LLP
+INV-204,2025-11-04,2025-11-29,Zenith Hospitality Group,32280.84,PAID,2025-11-26,B2B Bulk Corporate Order Invoice #204 - Zenith Hospitality Group
+INV-205,2025-12-20,2026-01-14,Silverline Event Organizers,23909.17,PAID,2026-01-14,B2B Bulk Corporate Order Invoice #205 - Silverline Event Organizers
+INV-206,2025-12-21,2026-01-15,Silverline Event Organizers,19967.6,PAID,2026-01-11,B2B Bulk Corporate Order Invoice #206 - Silverline Event Organizers
+INV-207,2026-01-10,2026-02-04,Aura Wellness Centers,22902.22,PAID,2026-02-03,B2B Bulk Corporate Order Invoice #207 - Aura Wellness Centers
+INV-208,2026-01-10,2026-02-04,Aura Wellness Centers,27498.86,PAID,2026-02-01,B2B Bulk Corporate Order Invoice #208 - Aura Wellness Centers
+INV-209,2026-01-12,2026-02-06,Metropolis Corporate Gifts LLP,40296.44,PAID,2026-02-06,B2B Bulk Corporate Order Invoice #209 - Metropolis Corporate Gifts LLP
+INV-211,2026-02-04,2026-03-01,Silverline Event Organizers,30903.23,PAID,2026-02-27,B2B Bulk Corporate Order Invoice #211 - Silverline Event Organizers
+INV-212,2026-02-06,2026-03-03,Metropolis Corporate Gifts LLP,40398.23,PAID,2026-03-02,B2B Bulk Corporate Order Invoice #212 - Metropolis Corporate Gifts LLP
+INV-210,2026-02-21,2026-03-18,Metropolis Corporate Gifts LLP,41962.91,PENDING,,B2B Bulk Corporate Order Invoice #210 - Metropolis Corporate Gifts LLP
+INV-215,2026-03-02,2026-03-27,Silverline Event Organizers,34028.72,PENDING,,B2B Bulk Corporate Order Invoice #215 - Silverline Event Organizers
+INV-213,2026-03-11,2026-04-05,Silverline Event Organizers,21785.92,PENDING,,B2B Bulk Corporate Order Invoice #213 - Silverline Event Organizers
+INV-214,2026-03-24,2026-04-18,Silverline Event Organizers,25260.41,PENDING,,B2B Bulk Corporate Order Invoice #214 - Silverline Event Organizers

@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Data directories (keep sample, ignore runtime uploads and temporary files)
+data/uploads/*
+!data/uploads/.gitkeep
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Streamlit runtime data
+.streamlit/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
