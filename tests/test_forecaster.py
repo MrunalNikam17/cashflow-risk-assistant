@@ -79,3 +79,16 @@ def test_forecast_safety_buffer_healthy(sample_tx_df):
     assert res["shortage_flag"] is False
     assert res["lowest_balance"] >= 50000.0
     assert res["safety_buffer_breach"] is False
+
+
+def test_forecast_uses_bank_balance_metadata(sample_tx_df):
+    sample_tx_df.attrs["current_balance"] = 0.0
+
+    result = forecast_cashflow(sample_tx_df, horizon_days=1)
+
+    assert result["current_balance"] == 0.0
+
+
+def test_forecast_rejects_nonpositive_horizon(sample_tx_df):
+    with pytest.raises(ValueError, match="horizon_days must be a positive integer"):
+        forecast_cashflow(sample_tx_df, horizon_days=0)

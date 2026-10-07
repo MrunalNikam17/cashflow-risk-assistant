@@ -219,21 +219,22 @@ with st.sidebar:
     st.markdown("### 📂 Sample Demonstration")
     st.caption("Pre-configured 6-month retail dataset with realistic recurring rent, payroll, and injected anomalies.")
 
-    if st.button("🚀 Load Synthetic Sample Data", use_container_width=True, type="primary"):
+    if st.button("🚀 Try with sample data", use_container_width=True, type="primary"):
         with st.spinner("Loading synthetic invoices, expenses, sales, and bank statements..."):
-            sample_files = list(SAMPLE_DATA_DIR.glob("*.csv"))
-            if not sample_files:
+            bank_statement = SAMPLE_DATA_DIR / "bank_statement.csv"
+            if not bank_statement.exists():
                 st.error("Sample data not found in data/sample/. Generating now...")
                 from src.synthetic_data.generate_sample_data import generate_all_sample_data
                 generate_all_sample_data()
-                sample_files = list(SAMPLE_DATA_DIR.glob("*.csv"))
 
-            df_raw = load_files(sample_files)
+            # The generated bank statement consolidates the detail files; loading
+            # all four together would count the same activity multiple times.
+            df_raw = load_file(bank_statement)
             df_cat = categorize_transactions(df_raw)
             st.session_state.df_transactions = df_cat
             st.session_state.categorized = True
-            st.session_state.data_source_label = f"Sample Retail Dataset ({len(df_cat)} records)"
-            st.success(f"Loaded {len(df_cat)} records across 4 synthetic files!")
+            st.session_state.data_source_label = f"Sample Retail Bank Ledger ({len(df_cat)} records)"
+            st.success(f"Loaded {len(df_cat)} records from the consolidated sample ledger.")
             st.rerun()
 
     st.markdown("---")
@@ -387,7 +388,7 @@ with tab1:
         display_df["amount"] = display_df["amount"].apply(lambda x: f"₹{x:,.2f}")
         st.dataframe(display_df, use_container_width=True, height=350)
     else:
-        st.warning("👈 Please upload files or click 'Load Synthetic Sample Data' in the sidebar to get started.")
+        st.warning("👈 Please upload files or click 'Try with sample data' in the sidebar to get started.")
 
 
 # =============================================================

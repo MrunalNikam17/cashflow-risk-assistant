@@ -103,3 +103,21 @@ def test_insight_missing_amount_raises_error():
     """Verify ValueError is raised if no purchase amount can be identified."""
     with pytest.raises(ValueError, match="Could not determine a valid purchase amount"):
         answer_affordability_question("Can I afford to buy some things?")
+
+
+def test_insight_requires_a_complete_forecast():
+    with pytest.raises(ValueError, match="A cash flow forecast is required"):
+        answer_affordability_question(
+            "Can I afford to purchase ₹80,000 of inventory next month?"
+        )
+
+    with pytest.raises(ValueError, match="must cover the full 30-day"):
+        answer_affordability_question(
+            "Can I afford to purchase ₹80,000 of inventory next month?",
+            forecast_result={
+                "forecast_daily": pd.DataFrame(
+                    [{"date": "2026-04-01", "projected_balance": 100000.0}]
+                ),
+                "current_balance": 100000.0,
+            },
+        )

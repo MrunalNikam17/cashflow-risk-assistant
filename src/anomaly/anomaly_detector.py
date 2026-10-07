@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 
 def detect_anomalies(
     df: pd.DataFrame,
-    z_threshold: float = 2.0,
+    z_threshold: float = DEFAULT_ZSCORE_THRESHOLD,
     use_isolation_forest: bool = True,
     contamination: float = DEFAULT_ISOLATION_CONTAMINATION,
 ) -> List[Dict[str, any]]:
@@ -93,7 +93,7 @@ def detect_anomalies(
                 sev = "High" if (effective_z >= 3.5 or multiplier >= 4.0) else "Medium"
                 reason = (
                     f"This Rs. {amt:,.2f} '{cat}' charge is {multiplier:.1f}x your typical "
-                    f"monthly {cat.lower()} spend of Rs. {typical_ref:,.2f} (z-score: {effective_z:.1f})."
+                    f"{cat.lower()} transaction of Rs. {typical_ref:,.2f} (z-score: {effective_z:.1f})."
                 )
                 anomalies_map[idx] = {
                     "date": outflows.at[idx, "date"].strftime("%Y-%m-%d"),

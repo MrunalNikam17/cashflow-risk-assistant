@@ -4,6 +4,7 @@ Replicates the multi-model fallback across free-tier models used in DataMind AI
 (https://github.com/MrunalNikam17/datamind-ai/blob/main/utils/llm.py).
 """
 
+import logging
 import os
 import requests
 from dotenv import load_dotenv
@@ -11,6 +12,7 @@ from dotenv import load_dotenv
 from src.utils.config import WORKING_MODELS, OPENROUTER_URL, LLM_TIMEOUT_SECONDS
 
 load_dotenv()
+logger = logging.getLogger(__name__)
 
 
 def call_claude(system_prompt: str, user_message: str, max_tokens: int = 1500) -> str:
@@ -28,7 +30,7 @@ def call_claude(system_prompt: str, user_message: str, max_tokens: int = 1500) -
     api_key = os.getenv("OPENROUTER_API_KEY", "").strip()
 
     if not api_key:
-        print("[LLM] OPENROUTER_API_KEY not set in environment or .env.", flush=True)
+        logger.warning("OPENROUTER_API_KEY is not set; using the offline fallback.")
         return ""
 
     headers = {
@@ -38,7 +40,8 @@ def call_claude(system_prompt: str, user_message: str, max_tokens: int = 1500) -
         "X-Title": "Cashflow & Risk Assistant",
     }
 
-    # Merge system + user into one message (compatible with all models including Gemma/Nemotron)
+    # Keep instructions in one user message for compatibility with models that
+    # do not support a separate system role.
     if system_prompt and system_prompt.strip():
         combined_message = f"{system_prompt.strip()}\n\n---\n\n{user_message.strip()}"
     else:
@@ -59,14 +62,12 @@ def call_claude(system_prompt: str, user_message: str, max_tokens: int = 1500) -
                 timeout=LLM_TIMEOUT_SECONDS,
             )
 
-            print(f"[LLM] Model: {model} | Status: {response.status_code}", flush=True)
-
             if response.status_code == 429:
-                print(f"[LLM] Rate limited on {model}, trying next...", flush=True)
+                logger.info("OpenRouter rate limited model %s; trying the next model.", model)
                 continue
 
             if response.status_code != 200:
-                print(f"[LLM] Failed on {model}: {response.text[:200]}", flush=True)
+                logger.warning("OpenRouter model %s returned HTTP %s.", model, response.status_code)
                 continue
 
             data = response.json()
@@ -74,14 +75,14 @@ def call_claude(system_prompt: str, user_message: str, max_tokens: int = 1500) -
             if "choices" in data and len(data["choices"]) > 0:
                 content = data["choices"][0]["message"]["content"]
                 if content and content.strip():
-                    print(f"[LLM] [OK] Got response from {model}", flush=True)
+                    logger.info("Received an OpenRouter response from %s.", model)
                     return content.strip()
 
-        except Exception as e:
-            print(f"[LLM ERROR] {model} -> {e}", flush=True)
+        except (requests.RequestException, ValueError, KeyError, TypeError, IndexError) as e:
+            logger.warning("OpenRouter request failed for model %s: %s", model, e)
             continue
 
-    print("[LLM] [FAIL] All models failed", flush=True)
+    logger.error("All configured OpenRouter models failed.")
     return ""
 
 

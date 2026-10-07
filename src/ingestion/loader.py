@@ -92,6 +92,7 @@ def load_file(file_path_or_buffer: Union[str, Path, object], filename: Optional[
     # Detect debit/credit dual columns (typical in bank statements)
     debit_col = find_column(raw_df, ["debit", "dr", "withdrawal", "paidout", "expenseamount"])
     credit_col = find_column(raw_df, ["credit", "cr", "deposit", "paidin", "incomeamount"])
+    balance_col = find_column(raw_df, ["balance", "runningbalance", "closingbalance", "availablebalance"])
 
     # Detect single Amount column
     amt_col = find_column(raw_df, ["amount", "netsalesamount", "value", "total", "netamount", "invoiceamount"])
@@ -103,6 +104,7 @@ def load_file(file_path_or_buffer: Union[str, Path, object], filename: Optional[
     status_col = find_column(raw_df, ["status", "paymentstatus"])
 
     records = []
+    latest_balance = None
 
     for idx, row in raw_df.iterrows():
         # Date parsing
@@ -117,6 +119,13 @@ def load_file(file_path_or_buffer: Union[str, Path, object], filename: Optional[
         if pd.isna(parsed_date):
             logger.warning(f"Row {idx} in {fname} skipped: invalid date '{raw_date}'")
             continue
+
+        if balance_col and pd.notna(row.get(balance_col)):
+            parsed_balance = clean_amount(row.get(balance_col))
+            if parsed_balance is not None and (
+                latest_balance is None or parsed_date >= latest_balance[0]
+            ):
+                latest_balance = (parsed_date, parsed_balance)
 
         # Description
         description = ""
@@ -141,25 +150,33 @@ def load_file(file_path_or_buffer: Union[str, Path, object], filename: Optional[
 
         # Determine Amount and Direction
         # Scenario A: Dual Debit/Credit columns (e.g. bank statement)
-        if debit_col and credit_col:
-            dr_val = clean_amount(row.get(debit_col, 0)) or 0.0
-            cr_val = clean_amount(row.get(credit_col, 0)) or 0.0
+        if debit_col or credit_col:
+            raw_debit = row.get(debit_col) if debit_col else None
+            raw_credit = row.get(credit_col) if credit_col else None
+            dr_val = clean_amount(raw_debit) if debit_col else 0.0
+            cr_val = clean_amount(raw_credit) if credit_col else 0.0
+            if debit_col and pd.notna(raw_debit) and str(raw_debit).strip() and dr_val is None:
+                logger.warning(f"Row {idx} in {fname} skipped malformed debit '{raw_debit}'.")
+            if credit_col and pd.notna(raw_credit) and str(raw_credit).strip() and cr_val is None:
+                logger.warning(f"Row {idx} in {fname} skipped malformed credit '{raw_credit}'.")
+            dr_val = dr_val or 0.0
+            cr_val = cr_val or 0.0
 
-            if dr_val > 0:
+            if dr_val != 0:
                 records.append({
                     "date": parsed_date,
                     "description": description,
                     "amount": round(abs(dr_val), 2),
-                    "direction": "outflow",
+                    "direction": "outflow" if dr_val > 0 else "inflow",
                     "source_file": fname,
                     "category": category,
                 })
-            if cr_val > 0:
+            if cr_val != 0:
                 records.append({
                     "date": parsed_date,
                     "description": description,
                     "amount": round(abs(cr_val), 2),
-                    "direction": "inflow",
+                    "direction": "inflow" if cr_val > 0 else "outflow",
                     "source_file": fname,
                     "category": category or "Sales Revenue",
                 })
@@ -185,7 +202,6 @@ def load_file(file_path_or_buffer: Union[str, Path, object], filename: Optional[
             if not direction:
                 if raw_amt < 0:
                     direction = "outflow"
-                    raw_amt = abs(raw_amt)
                 else:
                     lower_fname = fname.lower()
                     if any(k in lower_fname for k in ["expense", "bill", "payout", "cost", "vendor"]):
@@ -193,7 +209,7 @@ def load_file(file_path_or_buffer: Union[str, Path, object], filename: Optional[
                     elif any(k in lower_fname for k in ["sale", "pos", "revenue", "invoice", "income", "credit"]):
                         direction = "inflow"
                     else:
-                        direction = "inflow" if raw_amt >= 0 else "outflow"
+                        direction = "inflow"
 
             # Set default category for obvious sales files if empty
             if not category:
@@ -216,6 +232,8 @@ def load_file(file_path_or_buffer: Union[str, Path, object], filename: Optional[
     df_result = pd.DataFrame(records)[UNIFIED_COLUMNS]
     df_result["date"] = pd.to_datetime(df_result["date"])
     df_result = df_result.sort_values("date").reset_index(drop=True)
+    if latest_balance is not None:
+        df_result.attrs["current_balance"] = float(latest_balance[1])
     return df_result
 
 
@@ -235,4 +253,7 @@ def load_files(file_paths_or_buffers: List[Union[str, Path, object]]) -> pd.Data
 
     combined = pd.concat(dfs, ignore_index=True)
     combined = combined.sort_values("date").reset_index(drop=True)
+    balance_sources = [df.attrs["current_balance"] for df in dfs if "current_balance" in df.attrs]
+    if balance_sources:
+        combined.attrs["current_balance"] = float(balance_sources[-1])
     return combined

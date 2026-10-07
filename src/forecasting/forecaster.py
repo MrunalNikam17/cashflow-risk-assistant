@@ -143,19 +143,19 @@ def forecast_cashflow(
     """
     if df.empty:
         raise ValueError("Cannot forecast on an empty transactions DataFrame.")
+    if not isinstance(horizon_days, int) or horizon_days <= 0:
+        raise ValueError("horizon_days must be a positive integer.")
 
     daily = aggregate_daily_cashflow(df)
 
     # Determine starting balance
     if current_balance is not None:
         start_bal = float(current_balance)
+    elif df.attrs.get("current_balance") is not None:
+        start_bal = float(df.attrs["current_balance"])
     else:
         cum_last = float(daily["cumulative_net"].iloc[-1]) if not daily.empty else 100000.0
         start_bal = max(cum_last, 50000.0)
-
-    # Ensure starting balance is reasonable
-    if start_bal <= 0:
-        start_bal = 100000.0
 
     # Attach running historical balance to daily
     # Align the end of historical balance to start_bal

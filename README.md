@@ -206,7 +206,7 @@ python -m src.synthetic_data.generate_sample_data
 
 ### 4. Run Automated Tests
 
-Run the full pytest suite (17 tests covering all modules):
+Run the full pytest suite (23 tests covering all modules):
 
 ```bash
 pytest -v tests/
@@ -220,7 +220,7 @@ Start the Streamlit dashboard:
 streamlit run dashboard/app.py
 ```
 
-Open your browser at `http://localhost:8501`. Click **"🚀 Load Synthetic Sample Data"** in the sidebar to test all 4 tabs instantly!
+Open your browser at `http://localhost:8501`. Click **"🚀 Try with sample data"** in the sidebar to test all 4 tabs instantly. The dashboard reads the consolidated synthetic bank ledger so the same transactions in the sales, invoice, and expense detail files are not double-counted.
 
 ---
 

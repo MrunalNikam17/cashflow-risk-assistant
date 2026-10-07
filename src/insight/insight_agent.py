@@ -190,6 +190,14 @@ def answer_affordability_question(
             "Could not determine a valid purchase amount from the question. "
             "Please specify an amount like '₹80,000' or pass amount explicitly."
         )
+    if forecast_result is None or "forecast_daily" not in forecast_result:
+        raise ValueError("A cash flow forecast is required to evaluate affordability.")
+    if forecast_result["forecast_daily"].empty:
+        raise ValueError("The cash flow forecast has no projected dates to evaluate.")
+    if len(forecast_result["forecast_daily"]) < window_days:
+        raise ValueError(
+            f"The forecast must cover the full {window_days}-day affordability window."
+        )
 
     # Resolve safety buffer
     resolved_buffer = float(safety_buffer) if safety_buffer is not None else (
@@ -202,19 +210,13 @@ def answer_affordability_question(
     )
 
     # 2. Extract Forecast Timeline Slice
-    if forecast_result and "forecast_daily" in forecast_result and not forecast_result["forecast_daily"].empty:
-        fdf = forecast_result["forecast_daily"].copy()
-        # Slice for the relevant window
-        slice_df = fdf.iloc[: min(window_days, len(fdf))]
-        pre_end_bal = float(slice_df["projected_balance"].iloc[-1])
-        pre_min_row = slice_df.loc[slice_df["projected_balance"].idxmin()]
-        pre_min_bal = float(pre_min_row["projected_balance"])
-        pre_min_date = pd.to_datetime(pre_min_row["date"]).strftime("%Y-%m-%d")
-    else:
-        # Fallback approximation if no forecast provided
-        pre_end_bal = resolved_current_balance + (500.0 * window_days)
-        pre_min_bal = resolved_current_balance
-        pre_min_date = f"Day {window_days}"
+    fdf = forecast_result["forecast_daily"].copy()
+    # Slice only after proving the supplied forecast covers the requested window.
+    slice_df = fdf.iloc[:window_days]
+    pre_end_bal = float(slice_df["projected_balance"].iloc[-1])
+    pre_min_row = slice_df.loc[slice_df["projected_balance"].idxmin()]
+    pre_min_bal = float(pre_min_row["projected_balance"])
+    pre_min_date = pd.to_datetime(pre_min_row["date"]).strftime("%Y-%m-%d")
 
     # 3. Compute Post-Purchase Balance Numbers
     post_end_bal = pre_end_bal - purchase_amount
