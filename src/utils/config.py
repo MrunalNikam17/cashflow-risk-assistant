@@ -44,6 +44,7 @@ CATEGORIES = [
 DEFAULT_HORIZONS = [30, 60, 90]
 DEFAULT_HORIZON_DAYS = 30
 DEFAULT_SAFETY_BUFFER = 50000.0  # ₹50,000 minimum safety cushion
+DEFAULT_RECEIVABLE_COLLECTION_DELAY_DAYS = 7
 
 # Anomaly detection settings
 DEFAULT_ZSCORE_THRESHOLD = 2.5
@@ -51,8 +52,7 @@ DEFAULT_ISOLATION_CONTAMINATION = 0.05
 MIN_TRANSACTIONS_FOR_ZSCORE = 3
 
 # LLM & OpenRouter settings
-# Priority order: replicated from DataMind AI multi-model free tier fallback
-WORKING_MODELS = [
+_DEFAULT_MODELS = [
     "nvidia/nemotron-3-super-120b-a12b:free",
     "cohere/north-mini-code:free",
     "liquid/lfm-2.5-2.6b:free",
@@ -63,6 +63,12 @@ WORKING_MODELS = [
     "nvidia/nemotron-3-ultra-550b-a55b:free",
 ]
 
+raw_models = os.getenv("OPENROUTER_MODELS", "")
+if raw_models.strip():
+    WORKING_MODELS = [m.strip() for m in raw_models.replace(";", ",").split(",") if m.strip()]
+else:
+    WORKING_MODELS = _DEFAULT_MODELS
+
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 DEFAULT_BATCH_SIZE = 20
-LLM_TIMEOUT_SECONDS = 20
+LLM_TIMEOUT_SECONDS = float(os.getenv("OPENROUTER_TIMEOUT_SECONDS", "20"))

@@ -10,8 +10,8 @@ import logging
 import re
 from pathlib import Path
 from typing import List, Union, Optional
+
 import pandas as pd
-import numpy as np
 
 from src.utils.config import UNIFIED_COLUMNS, CATEGORIES
 
@@ -24,7 +24,6 @@ def clean_amount(val) -> Optional[float]:
         return None
     if isinstance(val, (int, float)):
         return float(val)
-    # Strip symbols like ₹, $, Rs., commas, whitespace
     cleaned = re.sub(r"[^\d.-]", "", str(val).strip())
     try:
         return float(cleaned)
@@ -42,92 +41,112 @@ def find_column(df: pd.DataFrame, candidates: List[str]) -> Optional[str]:
     return None
 
 
+def _normalize_text(value: object) -> str:
+    return re.sub(r"\s+", " ", str(value or "")).strip().lower()
+
+
+def _deduplicate_transactions(df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
+    if df.empty:
+        return df.copy(), 0
+    normalized = df.copy()
+    normalized["_description_key"] = normalized["description"].fillna("").map(_normalize_text)
+    normalized["_description_key"] = normalized["_description_key"].str.replace(r"[^a-z0-9 ]+", " ", regex=True)
+    normalized["_date_key"] = pd.to_datetime(normalized["date"]).dt.strftime("%Y-%m-%d")
+    normalized["_dup_key"] = (
+        normalized["_date_key"]
+        + "|"
+        + normalized["amount"].round(2).astype(str)
+        + "|"
+        + normalized["direction"]
+        + "|"
+        + normalized["_description_key"]
+    )
+    deduped = normalized.drop_duplicates(subset=["_dup_key"], keep="first")
+    dropped = int(len(normalized) - len(deduped))
+    deduped = deduped.drop(columns=["_date_key", "_description_key", "_dup_key"])
+    return deduped.reset_index(drop=True), dropped
+
+
 def load_file(file_path_or_buffer: Union[str, Path, object], filename: Optional[str] = None) -> pd.DataFrame:
     """Loads and normalizes a single CSV or Excel file.
 
-    Args:
-        file_path_or_buffer: Path to file or file-like object (e.g. from Streamlit file_uploader).
-        filename: Optional filename override when passing a buffer.
-
-    Returns:
-        DataFrame strictly conforming to UNIFIED_COLUMNS.
+    Raises:
+        ValueError: For empty files, missing required columns, or malformed dates.
     """
     if isinstance(file_path_or_buffer, (str, Path)):
         path = Path(file_path_or_buffer)
         fname = path.name
         suffix = path.suffix.lower()
-        if suffix in [".xlsx", ".xls"]:
-            raw_df = pd.read_excel(path)
-        else:
-            raw_df = pd.read_csv(path)
+        try:
+            if suffix in [".xlsx", ".xls"]:
+                raw_df = pd.read_excel(path)
+            else:
+                raw_df = pd.read_csv(path)
+        except Exception as exc:  # pragma: no cover - file read errors are surfaced clearly
+            raise ValueError(f"Could not read '{fname}': {exc}") from exc
     else:
         fname = filename or getattr(file_path_or_buffer, "name", "uploaded_file.csv")
         suffix = Path(fname).suffix.lower()
-        if suffix in [".xlsx", ".xls"]:
-            raw_df = pd.read_excel(file_path_or_buffer)
-        else:
-            raw_df = pd.read_csv(file_path_or_buffer)
+        try:
+            if suffix in [".xlsx", ".xls"]:
+                raw_df = pd.read_excel(file_path_or_buffer)
+            else:
+                raw_df = pd.read_csv(file_path_or_buffer)
+        except Exception as exc:
+            raise ValueError(f"Could not read '{fname}': {exc}") from exc
 
-    if raw_df.empty:
-        logger.warning(f"File {fname} is empty.")
-        return pd.DataFrame(columns=UNIFIED_COLUMNS)
+    if raw_df is None or raw_df.empty:
+        raise ValueError(f"File '{fname}' is empty.")
 
-    # Detect Date column
     date_col = find_column(
         raw_df,
-        ["date", "transactiondate", "txdate", "bookingdate", "invoicedate", "paymentdate", "timestamp", "entrydate"]
+        ["date", "transactiondate", "txdate", "bookingdate", "invoicedate", "paymentdate", "timestamp", "entrydate"],
     )
     if not date_col:
-        raise ValueError(f"Could not identify a date column in '{fname}'. Columns found: {list(raw_df.columns)}")
+        raise ValueError(f"File '{fname}' is missing a required date column. Available columns: {list(raw_df.columns)}")
 
-    # Detect Description column
     desc_col = find_column(
         raw_df,
-        ["description", "transactiondetails", "details", "narration", "particulars", "memo", "notes", "vendor", "clientname", "customer"]
+        ["description", "transactiondetails", "details", "narration", "particulars", "memo", "notes", "vendor", "clientname", "customer"],
     )
-
-    # Detect Category column if present
     cat_col = find_column(raw_df, ["category", "expensecategory", "classification"])
-
-    # Detect debit/credit dual columns (typical in bank statements)
     debit_col = find_column(raw_df, ["debit", "dr", "withdrawal", "paidout", "expenseamount"])
     credit_col = find_column(raw_df, ["credit", "cr", "deposit", "paidin", "incomeamount"])
     balance_col = find_column(raw_df, ["balance", "runningbalance", "closingbalance", "availablebalance"])
-
-    # Detect single Amount column
     amt_col = find_column(raw_df, ["amount", "netsalesamount", "value", "total", "netamount", "invoiceamount"])
-
-    # Detect explicit direction / type column
     dir_col = find_column(raw_df, ["direction", "type", "drcr", "transactiontype", "flow"])
-
-    # Status column (for invoices e.g. PAID vs PENDING)
     status_col = find_column(raw_df, ["status", "paymentstatus"])
+    pay_date_col = find_column(raw_df, ["paymentdate", "paiddate"])
+
+    if not (amt_col or debit_col or credit_col):
+        raise ValueError(
+            f"File '{fname}' is missing a required money column. Expected an 'amount' column or debit/credit columns."
+        )
 
     records = []
+    expected_receivables = []
     latest_balance = None
 
     for idx, row in raw_df.iterrows():
-        # Date parsing
-        raw_date = row[date_col]
-        pay_date_col = find_column(raw_df, ["paymentdate", "paiddate"])
+        raw_date = row.get(date_col)
+        if pd.isna(raw_date) or str(raw_date).strip() in ["", "nan", "none", "nat"]:
+            raise ValueError(f"Bad date value in '{fname}' row {idx + 2}: date is missing.")
+
+        effective_date = raw_date
         if pay_date_col and pd.notna(row.get(pay_date_col)):
             val_pay = str(row.get(pay_date_col)).strip()
             if val_pay and val_pay.lower() not in ["nan", "none", "nat", ""]:
-                raw_date = val_pay
+                effective_date = val_pay
 
-        parsed_date = pd.to_datetime(raw_date, errors="coerce")
+        parsed_date = pd.to_datetime(effective_date, errors="coerce")
         if pd.isna(parsed_date):
-            logger.warning(f"Row {idx} in {fname} skipped: invalid date '{raw_date}'")
-            continue
+            raise ValueError(f"Bad date value in '{fname}' row {idx + 2}: '{effective_date}' is not parseable.")
 
         if balance_col and pd.notna(row.get(balance_col)):
             parsed_balance = clean_amount(row.get(balance_col))
-            if parsed_balance is not None and (
-                latest_balance is None or parsed_date >= latest_balance[0]
-            ):
+            if parsed_balance is not None and (latest_balance is None or parsed_date >= latest_balance[0]):
                 latest_balance = (parsed_date, parsed_balance)
 
-        # Description
         description = ""
         if desc_col and pd.notna(row.get(desc_col)):
             description = str(row[desc_col]).strip()
@@ -136,11 +155,9 @@ def load_file(file_path_or_buffer: Union[str, Path, object], filename: Optional[
         else:
             description = f"Transaction from {fname}"
 
-        # Category
         category = None
         if cat_col and pd.notna(row.get(cat_col)):
             raw_cat = str(row[cat_col]).strip()
-            # Normalize to known categories if close match
             for known_cat in CATEGORIES:
                 if raw_cat.lower() == known_cat.lower():
                     category = known_cat
@@ -148,20 +165,17 @@ def load_file(file_path_or_buffer: Union[str, Path, object], filename: Optional[
             if not category:
                 category = raw_cat
 
-        # Determine Amount and Direction
-        # Scenario A: Dual Debit/Credit columns (e.g. bank statement)
         if debit_col or credit_col:
             raw_debit = row.get(debit_col) if debit_col else None
             raw_credit = row.get(credit_col) if credit_col else None
             dr_val = clean_amount(raw_debit) if debit_col else 0.0
             cr_val = clean_amount(raw_credit) if credit_col else 0.0
             if debit_col and pd.notna(raw_debit) and str(raw_debit).strip() and dr_val is None:
-                logger.warning(f"Row {idx} in {fname} skipped malformed debit '{raw_debit}'.")
+                raise ValueError(f"Malformed debit value in '{fname}' row {idx + 2}: '{raw_debit}'")
             if credit_col and pd.notna(raw_credit) and str(raw_credit).strip() and cr_val is None:
-                logger.warning(f"Row {idx} in {fname} skipped malformed credit '{raw_credit}'.")
+                raise ValueError(f"Malformed credit value in '{fname}' row {idx + 2}: '{raw_credit}'")
             dr_val = dr_val or 0.0
             cr_val = cr_val or 0.0
-
             if dr_val != 0:
                 records.append({
                     "date": parsed_date,
@@ -182,14 +196,41 @@ def load_file(file_path_or_buffer: Union[str, Path, object], filename: Optional[
                 })
             continue
 
-        # Scenario B: Single Amount column
         if amt_col:
             raw_amt = clean_amount(row.get(amt_col))
             if raw_amt is None:
-                logger.warning(f"Row {idx} in {fname} skipped: unparseable amount '{row.get(amt_col)}'")
-                continue
+                raise ValueError(f"Malformed amount value in '{fname}' row {idx + 2}: '{row.get(amt_col)}'")
 
-            # Check status for invoices (if PENDING, we still record but note it; if PAID, inflow)
+            status_value = str(row.get(status_col, "")).strip().lower() if status_col and pd.notna(row.get(status_col)) else ""
+            paid_statuses = {"paid", "paid in full", "settled", "completed", "received", "collected"}
+            pending_statuses = {"pending", "overdue", "open", "outstanding", "unpaid", "in arrears"}
+
+            if status_col and status_value:
+                if status_value in paid_statuses:
+                    payment_date = parsed_date
+                    if pay_date_col and pd.notna(row.get(pay_date_col)):
+                        candidate = pd.to_datetime(row.get(pay_date_col), errors="coerce")
+                        if not pd.isna(candidate):
+                            payment_date = candidate
+                    records.append({
+                        "date": payment_date,
+                        "description": description,
+                        "amount": round(abs(raw_amt), 2),
+                        "direction": "inflow",
+                        "source_file": fname,
+                        "category": category or "Sales Revenue",
+                    })
+                    continue
+                if status_value in pending_statuses:
+                    expected_receivables.append({
+                        "due_date": pd.to_datetime(parsed_date).normalize(),
+                        "amount": round(abs(raw_amt), 2),
+                        "description": description,
+                        "status": status_value,
+                        "source_file": fname,
+                    })
+                    continue
+
             direction = None
             if dir_col and pd.notna(row.get(dir_col)):
                 val_dir = str(row[dir_col]).strip().lower()
@@ -198,7 +239,6 @@ def load_file(file_path_or_buffer: Union[str, Path, object], filename: Optional[
                 elif val_dir in ["outflow", "debit", "dr", "withdrawal", "expense", "paid"]:
                     direction = "outflow"
 
-            # If no explicit direction column, infer from sign or filename
             if not direction:
                 if raw_amt < 0:
                     direction = "outflow"
@@ -211,10 +251,8 @@ def load_file(file_path_or_buffer: Union[str, Path, object], filename: Optional[
                     else:
                         direction = "inflow"
 
-            # Set default category for obvious sales files if empty
-            if not category:
-                if direction == "inflow" and any(k in fname.lower() for k in ["sale", "pos", "invoice"]):
-                    category = "Sales Revenue"
+            if not category and direction == "inflow" and any(k in fname.lower() for k in ["sale", "pos", "invoice"]):
+                category = "Sales Revenue"
 
             records.append({
                 "date": parsed_date,
@@ -225,26 +263,36 @@ def load_file(file_path_or_buffer: Union[str, Path, object], filename: Optional[
                 "category": category,
             })
 
-    if not records:
-        logger.warning(f"No valid transaction records extracted from {fname}.")
-        return pd.DataFrame(columns=UNIFIED_COLUMNS)
+    if not records and not expected_receivables:
+        raise ValueError(f"No valid transaction records were extracted from '{fname}'.")
 
-    df_result = pd.DataFrame(records)[UNIFIED_COLUMNS]
-    df_result["date"] = pd.to_datetime(df_result["date"])
-    df_result = df_result.sort_values("date").reset_index(drop=True)
+    df_result = pd.DataFrame(records)[UNIFIED_COLUMNS] if records else pd.DataFrame(columns=UNIFIED_COLUMNS)
+    if not df_result.empty:
+        df_result["date"] = pd.to_datetime(df_result["date"])
+        df_result = df_result.sort_values("date").reset_index(drop=True)
     if latest_balance is not None:
         df_result.attrs["current_balance"] = float(latest_balance[1])
+    if expected_receivables:
+        expected_df = pd.DataFrame(expected_receivables)
+        expected_df["due_date"] = pd.to_datetime(expected_df["due_date"]).dt.normalize()
+        df_result.attrs["expected_receivables"] = expected_df
     return df_result
 
 
 def load_files(file_paths_or_buffers: List[Union[str, Path, object]]) -> pd.DataFrame:
     """Loads and concatenates multiple CSV/Excel files into a single unified DataFrame."""
+    if not file_paths_or_buffers:
+        return pd.DataFrame(columns=UNIFIED_COLUMNS)
+
     dfs = []
+    expected_frames = []
     for item in file_paths_or_buffers:
         try:
             df = load_file(item)
             if not df.empty:
                 dfs.append(df)
+            if "expected_receivables" in df.attrs:
+                expected_frames.append(df.attrs["expected_receivables"])
         except Exception as e:
             logger.error(f"Failed loading file {item}: {e}", exc_info=True)
 
@@ -252,7 +300,15 @@ def load_files(file_paths_or_buffers: List[Union[str, Path, object]]) -> pd.Data
         return pd.DataFrame(columns=UNIFIED_COLUMNS)
 
     combined = pd.concat(dfs, ignore_index=True)
+    combined, duplicates_dropped = _deduplicate_transactions(combined)
     combined = combined.sort_values("date").reset_index(drop=True)
+    combined.attrs["duplicates_dropped"] = duplicates_dropped
+
+    if expected_frames:
+        expected_df = pd.concat(expected_frames, ignore_index=True)
+        expected_df = expected_df.drop_duplicates(subset=["due_date", "amount", "description"], keep="first")
+        combined.attrs["expected_receivables"] = expected_df
+
     balance_sources = [df.attrs["current_balance"] for df in dfs if "current_balance" in df.attrs]
     if balance_sources:
         combined.attrs["current_balance"] = float(balance_sources[-1])

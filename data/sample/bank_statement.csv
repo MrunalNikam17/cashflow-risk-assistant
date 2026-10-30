@@ -1,254 +1,91 @@
-date,transaction_details,reference_no,debit,credit,balance
-2025-10-01,Rent: Monthly Storefront Retail Lease Rent - October 2025 (Ref: Apex Commercial Properties),TXNREF80001,40000.0,0.0,85000.0
-2025-10-01,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80002,0.0,7302.14,92302.14
-2025-10-02,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80003,0.0,6278.46,98580.6
-2025-10-03,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80004,0.0,10170.57,108751.17
-2025-10-04,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80005,0.0,9797.86,118549.03
-2025-10-05,Salary: Staff Salaries & Wages Payroll Disbursal (October 2025) (Ref: HROps Payroll Disbursal),TXNREF80006,65000.0,0.0,53549.03
-2025-10-05,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80007,0.0,10981.34,64530.37
-2025-10-06,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80008,0.0,5241.8,69772.17
-2025-10-07,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80009,0.0,4487.25,74259.42
-2025-10-08,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80010,5530.1,0.0,68729.32
-2025-10-08,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80011,0.0,5038.05,73767.37
-2025-10-09,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80012,0.0,4563.6,78330.97
-2025-10-10,Inventory Purchase: Bulk Wholesale Stock Restock & Raw Material Order (Ref: Global Supplies Wholesale Ltd),TXNREF80013,45843.59,0.0,32487.38
-2025-10-10,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80014,0.0,8250.88,40738.26
-2025-10-11,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80015,0.0,13631.95,54370.21
-2025-10-12,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80016,0.0,11871.41,66241.62
-2025-10-13,Utilities: Commercial Electricity & Water Utility Bill (October 2025) (Ref: State Electricity & Municipal Utility),TXNREF80017,7823.08,0.0,58418.54
-2025-10-13,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80018,0.0,5532.65,63951.19
-2025-10-14,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80019,0.0,4954.23,68905.42
-2025-10-15,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80020,0.0,5161.12,74066.54
-2025-10-16,Equipment: Routine Store HVAC Maintenance & Filter Servicing (Ref: QuickFix Commercial Facility Care),TXNREF80021,3399.96,0.0,70666.58
-2025-10-16,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80022,0.0,7571.95,78238.53
-2025-10-17,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80023,0.0,9916.16,88154.69
-2025-10-18,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80024,4765.77,0.0,83388.92
-2025-10-18,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80025,0.0,13459.35,96848.27
-2025-10-19,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80026,0.0,10612.4,107460.67
-2025-10-20,Loan Repayment: Equipment Term Loan Monthly EMI Installment (Ref: HDFC Business Loan Division),TXNREF80027,18500.0,0.0,88960.67
-2025-10-20,Taxes: Quarterly GST Direct Challan Tax Payment Filing (Ref: GST State Tax Treasury),TXNREF80028,24500.0,0.0,64460.67
-2025-10-20,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80029,0.0,6824.86,71285.53
-2025-10-21,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80030,0.0,4788.25,76073.78
-2025-10-22,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80031,0.0,5566.04,81639.82
-2025-10-23,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80032,0.0,7762.28,89402.1
-2025-10-24,Inventory Purchase: Bulk Wholesale Stock Restock & Raw Material Order (Ref: Global Supplies Wholesale Ltd),TXNREF80033,28595.94,0.0,60806.16
-2025-10-24,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80034,0.0,9880.0,70686.16
-2025-10-25,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80035,0.0,13120.17,83806.33
-2025-10-26,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80036,0.0,13950.0,97756.33
-2025-10-27,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80037,0.0,7234.26,104990.59
-2025-10-28,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80038,4155.91,0.0,100834.68
-2025-10-28,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80039,0.0,6993.6,107828.28
-2025-10-29,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80040,0.0,5024.57,112852.85
-2025-10-30,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80041,0.0,4315.56,117168.41
-2025-10-31,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80042,0.0,8419.54,125587.95
-2025-11-01,Rent: Monthly Storefront Retail Lease Rent - November 2025 (Ref: Apex Commercial Properties),TXNREF80043,40000.0,0.0,85587.95
-2025-11-01,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80044,0.0,14050.4,99638.35
-2025-11-02,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80045,0.0,13589.23,113227.58
-2025-11-03,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80046,0.0,9493.09,122720.67
-2025-11-03,NEFT Client Inward Remittance - Silverline Event Organizers (Inv #INV-202),TXNREF80047,0.0,19371.97,142092.64
-2025-11-04,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80048,0.0,9193.66,151286.3
-2025-11-05,Salary: Staff Salaries & Wages Payroll Disbursal (November 2025) (Ref: HROps Payroll Disbursal),TXNREF80049,65000.0,0.0,86286.3
-2025-11-05,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80050,0.0,6666.05,92952.35
-2025-11-06,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80051,0.0,8199.48,101151.83
-2025-11-07,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80052,0.0,10975.43,112127.26
-2025-11-08,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80053,5016.07,0.0,107111.19
-2025-11-08,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80054,0.0,19305.69,126416.88
-2025-11-09,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80055,0.0,15603.17,142020.05
-2025-11-09,NEFT Client Inward Remittance - Metropolis Corporate Gifts LLP (Inv #INV-201),TXNREF80056,0.0,35657.69,177677.74
-2025-11-10,Inventory Purchase: Bulk Wholesale Stock Restock & Raw Material Order (Ref: Global Supplies Wholesale Ltd),TXNREF80057,28530.72,0.0,149147.02
-2025-11-10,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80058,0.0,6441.96,155588.98
-2025-11-11,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80059,0.0,6359.83,161948.81
-2025-11-12,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80060,0.0,7776.15,169724.96
-2025-11-13,Utilities: Commercial Electricity & Water Utility Bill (November 2025) (Ref: State Electricity & Municipal Utility),TXNREF80061,6840.02,0.0,162884.94
-2025-11-13,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80062,0.0,6432.34,169317.28
-2025-11-14,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80063,0.0,12038.29,181355.57
-2025-11-15,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80064,0.0,19169.81,200525.38
-2025-11-16,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80065,0.0,15120.13,215645.51
-2025-11-17,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80066,0.0,6236.94,221882.45
-2025-11-18,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80067,4096.51,0.0,217785.94
-2025-11-18,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80068,0.0,9738.92,227524.86
-2025-11-19,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80069,0.0,7542.86,235067.72
-2025-11-20,Loan Repayment: Equipment Term Loan Monthly EMI Installment (Ref: HDFC Business Loan Division),TXNREF80070,18500.0,0.0,216567.72
-2025-11-20,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80071,0.0,5659.09,222226.81
-2025-11-21,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80072,0.0,9015.03,231241.84
-2025-11-22,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80073,0.0,12765.89,244007.73
-2025-11-23,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80074,0.0,16973.0,260980.73
-2025-11-24,Inventory Purchase: Bulk Wholesale Stock Restock & Raw Material Order (Ref: Global Supplies Wholesale Ltd),TXNREF80075,40997.69,0.0,219983.04
-2025-11-24,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80076,0.0,8814.35,228797.39
-2025-11-25,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80077,0.0,7149.72,235947.11
-2025-11-26,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80078,0.0,5535.88,241482.99
-2025-11-26,NEFT Client Inward Remittance - Zenith Hospitality Group (Inv #INV-204),TXNREF80079,0.0,32280.84,273763.83
-2025-11-27,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80080,0.0,6967.29,280731.12
-2025-11-27,NEFT Client Inward Remittance - Metropolis Corporate Gifts LLP (Inv #INV-203),TXNREF80081,0.0,41058.69,321789.81
-2025-11-28,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80082,5134.82,0.0,316654.99
-2025-11-28,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80083,0.0,14353.18,331008.17
-2025-11-29,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80084,0.0,16174.06,347182.23
-2025-11-30,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80085,0.0,19765.01,366947.24
-2025-12-01,Rent: Monthly Storefront Retail Lease Rent - December 2025 (Ref: Apex Commercial Properties),TXNREF80086,40000.0,0.0,326947.24
-2025-12-01,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80087,0.0,9123.51,336070.75
-2025-12-02,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80088,0.0,5301.66,341372.41
-2025-12-03,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80089,0.0,8493.25,349865.66
-2025-12-04,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80090,0.0,8317.69,358183.35
-2025-12-05,Salary: Staff Salaries & Wages Payroll Disbursal (December 2025) (Ref: HROps Payroll Disbursal),TXNREF80091,65000.0,0.0,293183.35
-2025-12-05,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80092,0.0,11770.46,304953.81
-2025-12-06,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80093,0.0,14042.95,318996.76
-2025-12-07,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80094,0.0,17082.82,336079.58
-2025-12-08,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80095,4161.32,0.0,331918.26
-2025-12-08,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80096,0.0,5751.98,337670.24
-2025-12-09,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80097,0.0,7206.45,344876.69
-2025-12-10,Inventory Purchase: Bulk Wholesale Stock Restock & Raw Material Order (Ref: Global Supplies Wholesale Ltd),TXNREF80098,39785.31,0.0,305091.38
-2025-12-10,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80099,0.0,7291.75,312383.13
-2025-12-11,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80100,0.0,9542.17,321925.3
-2025-12-12,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80101,0.0,13676.68,335601.98
-2025-12-13,Utilities: Commercial Electricity & Water Utility Bill (December 2025) (Ref: State Electricity & Municipal Utility),TXNREF80102,7240.05,0.0,328361.93
-2025-12-13,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80103,0.0,14015.03,342376.96
-2025-12-14,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80104,0.0,15942.26,358319.22
-2025-12-15,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80105,0.0,6053.94,364373.16
-2025-12-16,Equipment: Routine Store HVAC Maintenance & Filter Servicing (Ref: QuickFix Commercial Facility Care),TXNREF80106,5061.69,0.0,359311.47
-2025-12-16,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80107,0.0,9356.83,368668.3
-2025-12-17,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80108,0.0,9167.34,377835.64
-2025-12-18,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80109,3519.5,0.0,374316.14
-2025-12-18,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80110,0.0,6593.0,380909.14
-2025-12-19,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80111,0.0,12344.09,393253.23
-2025-12-20,Loan Repayment: Equipment Term Loan Monthly EMI Installment (Ref: HDFC Business Loan Division),TXNREF80112,18500.0,0.0,374753.23
-2025-12-20,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80113,0.0,16822.88,391576.11
-2025-12-21,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80114,0.0,13116.82,404692.93
-2025-12-22,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80115,0.0,8681.29,413374.22
-2025-12-23,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80116,0.0,7677.2,421051.42
-2025-12-24,Inventory Purchase: Bulk Wholesale Stock Restock & Raw Material Order (Ref: Global Supplies Wholesale Ltd),TXNREF80117,44116.39,0.0,376935.03
-2025-12-24,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80118,0.0,8753.82,385688.85
-2025-12-25,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80119,0.0,7636.59,393325.44
-2025-12-26,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80120,0.0,8753.22,402078.66
-2025-12-27,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80121,0.0,14508.77,416587.43
-2025-12-28,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80122,5594.42,0.0,410993.01
-2025-12-28,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80123,0.0,12033.25,423026.26
-2025-12-29,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80124,0.0,9430.94,432457.2
-2025-12-30,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80125,0.0,9204.25,441661.45
-2025-12-31,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80126,0.0,8992.49,450653.94
-2026-01-01,Rent: Monthly Storefront Retail Lease Rent - January 2026 (Ref: Apex Commercial Properties),TXNREF80127,40000.0,0.0,410653.94
-2026-01-01,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80128,0.0,5307.05,415960.99
-2026-01-02,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80129,0.0,7260.66,423221.65
-2026-01-03,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80130,0.0,15207.06,438428.71
-2026-01-04,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80131,0.0,15655.17,454083.88
-2026-01-05,Salary: Staff Salaries & Wages Payroll Disbursal (January 2026) (Ref: HROps Payroll Disbursal),TXNREF80132,65000.0,0.0,389083.88
-2026-01-05,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80133,0.0,4508.35,393592.23
-2026-01-06,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80134,0.0,5949.57,399541.8
-2026-01-07,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80135,0.0,4449.17,403990.97
-2026-01-08,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80136,4520.75,0.0,399470.22
-2026-01-08,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80137,0.0,6938.17,406408.39
-2026-01-09,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80138,0.0,10446.26,416854.65
-2026-01-10,Inventory Purchase: Bulk Wholesale Stock Restock & Raw Material Order (Ref: Global Supplies Wholesale Ltd),TXNREF80139,31109.59,0.0,385745.06
-2026-01-10,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80140,0.0,10334.54,396079.6
-2026-01-11,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80141,0.0,12589.34,408668.94
-2026-01-11,NEFT Client Inward Remittance - Silverline Event Organizers (Inv #INV-206),TXNREF80142,0.0,19967.6,428636.54
-2026-01-12,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80143,0.0,6179.29,434815.83
-2026-01-13,Utilities: State Electricity Board Commercial Power Surge & Penalty Meter Charge (Ref: State Electricity & Municipal Utility),TXNREF80144,45000.0,0.0,389815.83
-2026-01-13,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80145,0.0,5154.2,394970.03
-2026-01-14,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80146,0.0,7340.76,402310.79
-2026-01-14,NEFT Client Inward Remittance - Silverline Event Organizers (Inv #INV-205),TXNREF80147,0.0,23909.17,426219.96
-2026-01-15,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80148,0.0,5723.29,431943.25
-2026-01-16,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80149,0.0,7953.09,439896.34
-2026-01-17,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80150,0.0,13005.43,452901.77
-2026-01-18,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80151,6371.64,0.0,446530.13
-2026-01-18,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80152,0.0,14244.55,460774.68
-2026-01-19,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80153,0.0,4924.14,465698.82
-2026-01-20,Loan Repayment: Equipment Term Loan Monthly EMI Installment (Ref: HDFC Business Loan Division),TXNREF80154,18500.0,0.0,447198.82
-2026-01-20,Taxes: Quarterly GST Direct Challan Tax Payment Filing (Ref: GST State Tax Treasury),TXNREF80155,24500.0,0.0,422698.82
-2026-01-20,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80156,0.0,5322.18,428021.0
-2026-01-21,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80157,0.0,7782.54,435803.54
-2026-01-22,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80158,0.0,6539.56,442343.1
-2026-01-23,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80159,0.0,8971.45,451314.55
-2026-01-24,Inventory Purchase: Bulk Wholesale Stock Restock & Raw Material Order (Ref: Global Supplies Wholesale Ltd),TXNREF80160,34731.89,0.0,416582.66
-2026-01-24,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80161,0.0,12864.25,429446.91
-2026-01-25,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80162,0.0,10286.52,439733.43
-2026-01-26,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80163,0.0,5008.91,444742.34
-2026-01-27,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80164,0.0,5417.11,450159.45
-2026-01-28,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80165,3778.24,0.0,446381.21
-2026-01-28,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80166,0.0,6317.91,452699.12
-2026-01-29,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80167,0.0,5028.41,457727.53
-2026-01-30,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80168,0.0,7990.98,465718.51
-2026-01-31,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80169,0.0,9961.46,475679.97
-2026-02-01,Rent: Monthly Storefront Retail Lease Rent - February 2026 (Ref: Apex Commercial Properties),TXNREF80170,40000.0,0.0,435679.97
-2026-02-01,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80171,0.0,11561.85,447241.82
-2026-02-01,NEFT Client Inward Remittance - Aura Wellness Centers (Inv #INV-208),TXNREF80172,0.0,27498.86,474740.68
-2026-02-02,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80173,0.0,4270.57,479011.25
-2026-02-03,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80174,0.0,6340.58,485351.83
-2026-02-03,NEFT Client Inward Remittance - Aura Wellness Centers (Inv #INV-207),TXNREF80175,0.0,22902.22,508254.05
-2026-02-04,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80176,0.0,6200.48,514454.53
-2026-02-05,Salary: Staff Salaries & Wages Payroll Disbursal (February 2026) (Ref: HROps Payroll Disbursal),TXNREF80177,65000.0,0.0,449454.53
-2026-02-05,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80178,0.0,3786.83,453241.36
-2026-02-06,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80179,0.0,6860.37,460101.73
-2026-02-06,NEFT Client Inward Remittance - Metropolis Corporate Gifts LLP (Inv #INV-209),TXNREF80180,0.0,40296.44,500398.17
-2026-02-07,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80181,0.0,11771.11,512169.28
-2026-02-08,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80182,3790.15,0.0,508379.13
-2026-02-08,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80183,0.0,9258.66,517637.79
-2026-02-09,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80184,0.0,3974.88,521612.67
-2026-02-10,Inventory Purchase: Bulk Wholesale Stock Restock & Raw Material Order (Ref: Global Supplies Wholesale Ltd),TXNREF80185,44949.89,0.0,476662.78
-2026-02-10,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80186,0.0,6432.68,483095.46
-2026-02-11,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80187,0.0,5317.39,488412.85
-2026-02-12,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80188,0.0,5016.37,493429.22
-2026-02-13,Utilities: Commercial Electricity & Water Utility Bill (February 2026) (Ref: State Electricity & Municipal Utility),TXNREF80189,7157.14,0.0,486272.08
-2026-02-13,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80190,0.0,8951.17,495223.25
-2026-02-14,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80191,0.0,12536.42,507759.67
-2026-02-15,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80192,0.0,9127.02,516886.69
-2026-02-16,Equipment: Routine Store HVAC Maintenance & Filter Servicing (Ref: QuickFix Commercial Facility Care),TXNREF80193,4588.57,0.0,512298.12
-2026-02-16,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80194,0.0,3866.61,516164.73
-2026-02-17,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80195,0.0,4889.02,521053.75
-2026-02-18,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80196,5921.38,0.0,515132.37
-2026-02-18,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80197,0.0,4866.15,519998.52
-2026-02-19,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80198,0.0,4999.09,524997.61
-2026-02-20,Loan Repayment: Equipment Term Loan Monthly EMI Installment (Ref: HDFC Business Loan Division),TXNREF80199,18500.0,0.0,506497.61
-2026-02-20,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80200,0.0,8738.71,515236.32
-2026-02-21,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80201,0.0,11795.34,527031.66
-2026-02-22,Equipment: Emergency Industrial Chiller Compressor Complete Overhaul & Repair (Ref: CoolTech Industrial Refrigeration Corp),TXNREF80202,85000.0,0.0,442031.66
-2026-02-22,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80203,0.0,13512.51,455544.17
-2026-02-23,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80204,0.0,3871.16,459415.33
-2026-02-24,Inventory Purchase: Bulk Wholesale Stock Restock & Raw Material Order (Ref: Global Supplies Wholesale Ltd),TXNREF80205,42594.64,0.0,416820.69
-2026-02-24,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80206,0.0,4802.02,421622.71
-2026-02-25,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80207,0.0,4608.26,426230.97
-2026-02-26,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80208,0.0,6206.72,432437.69
-2026-02-27,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80209,0.0,6901.11,439338.8
-2026-02-27,NEFT Client Inward Remittance - Silverline Event Organizers (Inv #INV-211),TXNREF80210,0.0,30903.23,470242.03
-2026-02-28,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80211,5108.68,0.0,465133.35
-2026-02-28,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80212,0.0,9125.91,474259.26
-2026-03-01,Rent: Monthly Storefront Retail Lease Rent - March 2026 (Ref: Apex Commercial Properties),TXNREF80213,40000.0,0.0,434259.26
-2026-03-01,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80214,0.0,12415.99,446675.25
-2026-03-02,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80215,0.0,5718.77,452394.02
-2026-03-02,NEFT Client Inward Remittance - Metropolis Corporate Gifts LLP (Inv #INV-212),TXNREF80216,0.0,40398.23,492792.25
-2026-03-03,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80217,0.0,5202.77,497995.02
-2026-03-04,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80218,0.0,5099.31,503094.33
-2026-03-05,Salary: Staff Salaries & Wages Payroll Disbursal (March 2026) (Ref: HROps Payroll Disbursal),TXNREF80219,65000.0,0.0,438094.33
-2026-03-05,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80220,0.0,7523.75,445618.08
-2026-03-06,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80221,0.0,8994.09,454612.17
-2026-03-07,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80222,0.0,15098.77,469710.94
-2026-03-08,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80223,6419.35,0.0,463291.59
-2026-03-08,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80224,0.0,13077.11,476368.7
-2026-03-09,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80225,0.0,4382.12,480750.82
-2026-03-10,Inventory Purchase: Bulk Wholesale Stock Restock & Raw Material Order (Ref: Global Supplies Wholesale Ltd),TXNREF80226,35570.69,0.0,445180.13
-2026-03-10,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80227,0.0,7797.42,452977.55
-2026-03-11,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80228,0.0,7209.69,460187.24
-2026-03-12,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80229,0.0,7688.39,467875.63
-2026-03-13,Utilities: Commercial Electricity & Water Utility Bill (March 2026) (Ref: State Electricity & Municipal Utility),TXNREF80230,7978.35,0.0,459897.28
-2026-03-13,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80231,0.0,11168.65,471065.93
-2026-03-14,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80232,0.0,15016.52,486082.45
-2026-03-15,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80233,0.0,10581.02,496663.47
-2026-03-16,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80234,0.0,5948.31,502611.78
-2026-03-17,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80235,0.0,4969.49,507581.27
-2026-03-18,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80236,5156.12,0.0,502425.15
-2026-03-18,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80237,0.0,5643.74,508068.89
-2026-03-19,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80238,0.0,4411.09,512479.98
-2026-03-20,Loan Repayment: Equipment Term Loan Monthly EMI Installment (Ref: HDFC Business Loan Division),TXNREF80239,18500.0,0.0,493979.98
-2026-03-20,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80240,0.0,8705.38,502685.36
-2026-03-21,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80241,0.0,15904.51,518589.87
-2026-03-22,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80242,0.0,11223.82,529813.69
-2026-03-23,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80243,0.0,7022.66,536836.35
-2026-03-24,Inventory Purchase: Bulk Wholesale Stock Restock & Raw Material Order (Ref: Global Supplies Wholesale Ltd),TXNREF80244,44588.09,0.0,492248.26
-2026-03-24,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80245,0.0,5838.03,498086.29
-2026-03-25,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80246,0.0,5722.83,503809.12
-2026-03-26,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80247,0.0,7646.34,511455.46
-2026-03-27,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80248,0.0,11479.4,522934.86
-2026-03-28,Marketing: Digital Ad Campaign & Promotional Local Print Flyers (Ref: Meta Ads & Local Print Media),TXNREF80249,5355.56,0.0,517579.3
-2026-03-28,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80250,0.0,13112.49,530691.79
-2026-03-29,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80251,0.0,14169.65,544861.44
-2026-03-30,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80252,0.0,4757.26,549618.7
-2026-03-31,Merchant Settlement Credit - Daily POS & Store Card Inflow,TXNREF80253,0.0,5268.15,554886.85
+date,description,amount,direction,source_file,balance
+2026-05-03,POS settlement 1,30965.66,inflow,bank_statement.csv,203765.66
+2026-05-04,POS settlement 2,16831.89,inflow,bank_statement.csv,220597.55
+2026-05-05,POS settlement 3,19059.48,inflow,bank_statement.csv,239657.03
+2026-05-06,POS settlement 4,19365.09,inflow,bank_statement.csv,259022.12
+2026-05-07,POS settlement 5,15970.29,inflow,bank_statement.csv,274992.41
+2026-05-08,POS settlement 6,16820.93,inflow,bank_statement.csv,291813.34
+2026-05-09,POS settlement 7,31521.32,inflow,bank_statement.csv,316134.66
+2026-05-10,POS settlement 8,31096.64,inflow,bank_statement.csv,347231.3
+2026-05-11,POS settlement 9,18553.72,inflow,bank_statement.csv,365785.02
+2026-05-12,POS settlement 10,17603.01,inflow,bank_statement.csv,383388.03
+2026-05-13,POS settlement 11,19728.45,inflow,bank_statement.csv,403116.48
+2026-05-14,POS settlement 12,19646.32,inflow,bank_statement.csv,422762.8
+2026-05-15,POS settlement 13,18824.87,inflow,bank_statement.csv,434387.67
+2026-05-16,POS settlement 14,33263.13,inflow,bank_statement.csv,467650.8
+2026-05-17,POS settlement 15,32501.22,inflow,bank_statement.csv,500152.02
+2026-05-18,POS settlement 16,17766.85,inflow,bank_statement.csv,517918.87
+2026-05-19,POS settlement 17,19242.16,inflow,bank_statement.csv,537161.03
+2026-05-20,POS settlement 18,17642.67,inflow,bank_statement.csv,554803.7
+2026-05-21,POS settlement 19,19833.22,inflow,bank_statement.csv,567436.92
+2026-05-22,POS settlement 20,18697.13,inflow,bank_statement.csv,586134.05
+2026-05-23,POS settlement 21,31614.81,inflow,bank_statement.csv,617748.86
+2026-05-24,POS settlement 22,30956.85,inflow,bank_statement.csv,648705.71
+2026-05-25,POS settlement 23,20113.85,inflow,bank_statement.csv,668819.56
+2026-05-26,POS settlement 24,18411.13,inflow,bank_statement.csv,687230.69
+2026-05-27,POS settlement 25,18026.38,inflow,bank_statement.csv,698057.07
+2026-05-28,POS settlement 26,18056.22,inflow,bank_statement.csv,716113.29
+2026-05-29,POS settlement 27,19051.17,inflow,bank_statement.csv,735164.46
+2026-05-30,POS settlement 28,31619.77,inflow,bank_statement.csv,766784.23
+2026-05-31,POS settlement 29,31550.86,inflow,bank_statement.csv,798335.09
+2026-06-01,POS settlement 30,18708.38,inflow,bank_statement.csv,817043.47
+2026-06-02,POS settlement 31,20682.87,inflow,bank_statement.csv,830526.34
+2026-06-03,POS settlement 32,17545.57,inflow,bank_statement.csv,848071.91
+2026-06-04,POS settlement 33,17338.61,inflow,bank_statement.csv,865410.52
+2026-06-05,POS settlement 34,16897.28,inflow,bank_statement.csv,882307.8
+2026-06-06,POS settlement 35,30991.64,inflow,bank_statement.csv,913299.44
+2026-06-07,POS settlement 36,31477.7,inflow,bank_statement.csv,944777.14
+2026-06-08,POS settlement 37,17509.25,inflow,bank_statement.csv,955086.39
+2026-06-09,POS settlement 38,16567.94,inflow,bank_statement.csv,971654.33
+2026-06-10,POS settlement 39,16521.14,inflow,bank_statement.csv,988175.47
+2026-06-11,POS settlement 40,18230.5,inflow,bank_statement.csv,1006405.97
+2026-06-12,POS settlement 41,18286.46,inflow,bank_statement.csv,1024692.43
+2026-06-13,POS settlement 42,30138.93,inflow,bank_statement.csv,1054831.36
+2026-06-14,POS settlement 43,28616.05,inflow,bank_statement.csv,1076247.41
+2026-06-15,POS settlement 44,17545.66,inflow,bank_statement.csv,1093793.07
+2026-06-16,POS settlement 45,17378.74,inflow,bank_statement.csv,1111171.81
+2026-06-17,POS settlement 46,17480.4,inflow,bank_statement.csv,1128652.21
+2026-06-18,POS settlement 47,18250.76,inflow,bank_statement.csv,1146902.97
+2026-06-19,POS settlement 48,17468.38,inflow,bank_statement.csv,1164371.35
+2026-06-20,POS settlement 49,30059.91,inflow,bank_statement.csv,1187231.26
+2026-06-21,POS settlement 50,29344.96,inflow,bank_statement.csv,1216576.22
+2026-06-22,POS settlement 51,17579.8,inflow,bank_statement.csv,1234156.02
+2026-06-23,POS settlement 52,18016.89,inflow,bank_statement.csv,1252172.91
+2026-06-24,POS settlement 53,15544.65,inflow,bank_statement.csv,1267717.56
+2026-06-25,POS settlement 54,16950.58,inflow,bank_statement.csv,1284668.14
+2026-06-26,POS settlement 55,16817.34,inflow,bank_statement.csv,1294285.48
+2026-06-27,POS settlement 56,28873.81,inflow,bank_statement.csv,1323159.29
+2026-06-28,POS settlement 57,29411.31,inflow,bank_statement.csv,1352570.6
+2026-06-29,POS settlement 58,19353.38,inflow,bank_statement.csv,1371923.98
+2026-06-30,POS settlement 59,16589.32,inflow,bank_statement.csv,1388513.3
+2026-07-01,POS settlement 60,18862.83,inflow,bank_statement.csv,1407376.13
+2026-07-02,POS settlement 61,15757.02,inflow,bank_statement.csv,1415933.15
+2026-07-03,POS settlement 62,17452.41,inflow,bank_statement.csv,1433385.56
+2026-07-04,POS settlement 63,30682.3,inflow,bank_statement.csv,1464067.86
+2026-07-05,POS settlement 64,31326.33,inflow,bank_statement.csv,1495394.19
+2026-07-06,POS settlement 65,18946.71,inflow,bank_statement.csv,1514340.9
+2026-07-07,POS settlement 66,19124.11,inflow,bank_statement.csv,1533465.01
+2026-07-08,POS settlement 67,17830.76,inflow,bank_statement.csv,1544095.77
+2026-07-09,POS settlement 68,17769.06,inflow,bank_statement.csv,1561864.83
+2026-07-10,POS settlement 69,19424.86,inflow,bank_statement.csv,1581289.69
+2026-07-11,POS settlement 70,31157.11,inflow,bank_statement.csv,1612446.8
+2026-09-01,Rent,42000.0,outflow,bank_statement.csv,1570446.8
+2026-09-05,Salary,68000.0,outflow,bank_statement.csv,1502446.8
+2026-09-12,Utilities,8000.0,outflow,bank_statement.csv,1494446.8
+2026-09-20,Loan Repayment,18000.0,outflow,bank_statement.csv,1476446.8
+2026-10-01,Rent,42000.0,outflow,bank_statement.csv,1434446.8
+2026-10-05,Salary,68000.0,outflow,bank_statement.csv,1366446.8
+2026-10-12,Utilities,8000.0,outflow,bank_statement.csv,1358446.8
+2026-10-20,Loan Repayment,18000.0,outflow,bank_statement.csv,1340446.8
+2026-10-01,Rent,42000.0,outflow,bank_statement.csv,1298446.8
+2026-10-05,Salary,68000.0,outflow,bank_statement.csv,1230446.8
+2026-10-12,Utilities,8000.0,outflow,bank_statement.csv,1222446.8
+2026-10-20,Loan Repayment,18000.0,outflow,bank_statement.csv,1204446.8
+2026-11-01,Rent,42000.0,outflow,bank_statement.csv,1162446.8
+2026-11-05,Salary,68000.0,outflow,bank_statement.csv,1094446.8
+2026-11-12,Utilities,8000.0,outflow,bank_statement.csv,1086446.8
+2026-11-20,Loan Repayment,18000.0,outflow,bank_statement.csv,1068446.8
+2026-12-01,Rent,42000.0,outflow,bank_statement.csv,1026446.8
+2026-12-05,Salary,68000.0,outflow,bank_statement.csv,958446.8
+2026-12-12,Utilities,8000.0,outflow,bank_statement.csv,950446.8
+2026-12-20,Loan Repayment,18000.0,outflow,bank_statement.csv,932446.8

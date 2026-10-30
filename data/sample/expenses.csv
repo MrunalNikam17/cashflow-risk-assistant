@@ -1,61 +1,34 @@
-expense_id,date,vendor,category,description,amount,payment_method
-EXP-1001,2025-10-01,Apex Commercial Properties,Rent,Monthly Storefront Retail Lease Rent - October 2025,40000.0,Bank Transfer
-EXP-1002,2025-10-05,HROps Payroll Disbursal,Salary,Staff Salaries & Wages Payroll Disbursal (October 2025),65000.0,NEFT
-EXP-1025,2025-10-08,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,5530.1,Credit Card
-EXP-1026,2025-10-10,Global Supplies Wholesale Ltd,Inventory Purchase,Bulk Wholesale Stock Restock & Raw Material Order,45843.59,Bank Transfer
-EXP-1004,2025-10-13,State Electricity & Municipal Utility,Utilities,Commercial Electricity & Water Utility Bill (October 2025),7823.08,Net Banking
-EXP-1027,2025-10-16,QuickFix Commercial Facility Care,Equipment,Routine Store HVAC Maintenance & Filter Servicing,3399.96,UPI
-EXP-1028,2025-10-18,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,4765.77,Credit Card
-EXP-1003,2025-10-20,HDFC Business Loan Division,Loan Repayment,Equipment Term Loan Monthly EMI Installment,18500.0,Auto-Debit
-EXP-1059,2025-10-20,GST State Tax Treasury,Taxes,Quarterly GST Direct Challan Tax Payment Filing,24500.0,Government Portal NEFT
-EXP-1029,2025-10-24,Global Supplies Wholesale Ltd,Inventory Purchase,Bulk Wholesale Stock Restock & Raw Material Order,28595.94,Bank Transfer
-EXP-1030,2025-10-28,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,4155.91,Credit Card
-EXP-1005,2025-11-01,Apex Commercial Properties,Rent,Monthly Storefront Retail Lease Rent - November 2025,40000.0,Bank Transfer
-EXP-1006,2025-11-05,HROps Payroll Disbursal,Salary,Staff Salaries & Wages Payroll Disbursal (November 2025),65000.0,NEFT
-EXP-1031,2025-11-08,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,5016.07,Credit Card
-EXP-1032,2025-11-10,Global Supplies Wholesale Ltd,Inventory Purchase,Bulk Wholesale Stock Restock & Raw Material Order,28530.72,Bank Transfer
-EXP-1008,2025-11-13,State Electricity & Municipal Utility,Utilities,Commercial Electricity & Water Utility Bill (November 2025),6840.02,Net Banking
-EXP-1033,2025-11-18,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,4096.51,Credit Card
-EXP-1007,2025-11-20,HDFC Business Loan Division,Loan Repayment,Equipment Term Loan Monthly EMI Installment,18500.0,Auto-Debit
-EXP-1034,2025-11-24,Global Supplies Wholesale Ltd,Inventory Purchase,Bulk Wholesale Stock Restock & Raw Material Order,40997.69,Bank Transfer
-EXP-1035,2025-11-28,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,5134.82,Credit Card
-EXP-1009,2025-12-01,Apex Commercial Properties,Rent,Monthly Storefront Retail Lease Rent - December 2025,40000.0,Bank Transfer
-EXP-1010,2025-12-05,HROps Payroll Disbursal,Salary,Staff Salaries & Wages Payroll Disbursal (December 2025),65000.0,NEFT
-EXP-1036,2025-12-08,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,4161.32,Credit Card
-EXP-1037,2025-12-10,Global Supplies Wholesale Ltd,Inventory Purchase,Bulk Wholesale Stock Restock & Raw Material Order,39785.31,Bank Transfer
-EXP-1012,2025-12-13,State Electricity & Municipal Utility,Utilities,Commercial Electricity & Water Utility Bill (December 2025),7240.05,Net Banking
-EXP-1038,2025-12-16,QuickFix Commercial Facility Care,Equipment,Routine Store HVAC Maintenance & Filter Servicing,5061.69,UPI
-EXP-1039,2025-12-18,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,3519.5,Credit Card
-EXP-1011,2025-12-20,HDFC Business Loan Division,Loan Repayment,Equipment Term Loan Monthly EMI Installment,18500.0,Auto-Debit
-EXP-1040,2025-12-24,Global Supplies Wholesale Ltd,Inventory Purchase,Bulk Wholesale Stock Restock & Raw Material Order,44116.39,Bank Transfer
-EXP-1041,2025-12-28,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,5594.42,Credit Card
-EXP-1013,2026-01-01,Apex Commercial Properties,Rent,Monthly Storefront Retail Lease Rent - January 2026,40000.0,Bank Transfer
-EXP-1014,2026-01-05,HROps Payroll Disbursal,Salary,Staff Salaries & Wages Payroll Disbursal (January 2026),65000.0,NEFT
-EXP-1042,2026-01-08,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,4520.75,Credit Card
-EXP-1043,2026-01-10,Global Supplies Wholesale Ltd,Inventory Purchase,Bulk Wholesale Stock Restock & Raw Material Order,31109.59,Bank Transfer
-EXP-1016,2026-01-13,State Electricity & Municipal Utility,Utilities,State Electricity Board Commercial Power Surge & Penalty Meter Charge,45000.0,Net Banking
-EXP-1044,2026-01-18,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,6371.64,Credit Card
-EXP-1060,2026-01-20,GST State Tax Treasury,Taxes,Quarterly GST Direct Challan Tax Payment Filing,24500.0,Government Portal NEFT
-EXP-1015,2026-01-20,HDFC Business Loan Division,Loan Repayment,Equipment Term Loan Monthly EMI Installment,18500.0,Auto-Debit
-EXP-1045,2026-01-24,Global Supplies Wholesale Ltd,Inventory Purchase,Bulk Wholesale Stock Restock & Raw Material Order,34731.89,Bank Transfer
-EXP-1046,2026-01-28,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,3778.24,Credit Card
-EXP-1017,2026-02-01,Apex Commercial Properties,Rent,Monthly Storefront Retail Lease Rent - February 2026,40000.0,Bank Transfer
-EXP-1018,2026-02-05,HROps Payroll Disbursal,Salary,Staff Salaries & Wages Payroll Disbursal (February 2026),65000.0,NEFT
-EXP-1047,2026-02-08,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,3790.15,Credit Card
-EXP-1048,2026-02-10,Global Supplies Wholesale Ltd,Inventory Purchase,Bulk Wholesale Stock Restock & Raw Material Order,44949.89,Bank Transfer
-EXP-1020,2026-02-13,State Electricity & Municipal Utility,Utilities,Commercial Electricity & Water Utility Bill (February 2026),7157.14,Net Banking
-EXP-1049,2026-02-16,QuickFix Commercial Facility Care,Equipment,Routine Store HVAC Maintenance & Filter Servicing,4588.57,UPI
-EXP-1050,2026-02-18,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,5921.38,Credit Card
-EXP-1019,2026-02-20,HDFC Business Loan Division,Loan Repayment,Equipment Term Loan Monthly EMI Installment,18500.0,Auto-Debit
-EXP-1058,2026-02-22,CoolTech Industrial Refrigeration Corp,Equipment,Emergency Industrial Chiller Compressor Complete Overhaul & Repair,85000.0,Bank Transfer
-EXP-1051,2026-02-24,Global Supplies Wholesale Ltd,Inventory Purchase,Bulk Wholesale Stock Restock & Raw Material Order,42594.64,Bank Transfer
-EXP-1052,2026-02-28,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,5108.68,Credit Card
-EXP-1021,2026-03-01,Apex Commercial Properties,Rent,Monthly Storefront Retail Lease Rent - March 2026,40000.0,Bank Transfer
-EXP-1022,2026-03-05,HROps Payroll Disbursal,Salary,Staff Salaries & Wages Payroll Disbursal (March 2026),65000.0,NEFT
-EXP-1053,2026-03-08,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,6419.35,Credit Card
-EXP-1054,2026-03-10,Global Supplies Wholesale Ltd,Inventory Purchase,Bulk Wholesale Stock Restock & Raw Material Order,35570.69,Bank Transfer
-EXP-1024,2026-03-13,State Electricity & Municipal Utility,Utilities,Commercial Electricity & Water Utility Bill (March 2026),7978.35,Net Banking
-EXP-1055,2026-03-18,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,5156.12,Credit Card
-EXP-1023,2026-03-20,HDFC Business Loan Division,Loan Repayment,Equipment Term Loan Monthly EMI Installment,18500.0,Auto-Debit
-EXP-1056,2026-03-24,Global Supplies Wholesale Ltd,Inventory Purchase,Bulk Wholesale Stock Restock & Raw Material Order,44588.09,Bank Transfer
-EXP-1057,2026-03-28,Meta Ads & Local Print Media,Marketing,Digital Ad Campaign & Promotional Local Print Flyers,5355.56,Credit Card
+date,description,amount,direction,source_file,category
+2026-09-01,Rent,42000.0,outflow,expenses.csv,Rent
+2026-09-05,Salary,68000.0,outflow,expenses.csv,Salary
+2026-09-12,Utilities,8000.0,outflow,expenses.csv,Utilities
+2026-09-20,Loan Repayment,18000.0,outflow,expenses.csv,Loan Repayment
+2026-10-01,Rent,42000.0,outflow,expenses.csv,Rent
+2026-10-05,Salary,68000.0,outflow,expenses.csv,Salary
+2026-10-12,Utilities,8000.0,outflow,expenses.csv,Utilities
+2026-10-20,Loan Repayment,18000.0,outflow,expenses.csv,Loan Repayment
+2026-10-01,Rent,42000.0,outflow,expenses.csv,Rent
+2026-10-05,Salary,68000.0,outflow,expenses.csv,Salary
+2026-10-12,Utilities,8000.0,outflow,expenses.csv,Utilities
+2026-10-20,Loan Repayment,18000.0,outflow,expenses.csv,Loan Repayment
+2026-11-01,Rent,42000.0,outflow,expenses.csv,Rent
+2026-11-05,Salary,68000.0,outflow,expenses.csv,Salary
+2026-11-12,Utilities,8000.0,outflow,expenses.csv,Utilities
+2026-11-20,Loan Repayment,18000.0,outflow,expenses.csv,Loan Repayment
+2026-12-01,Rent,42000.0,outflow,expenses.csv,Rent
+2026-12-05,Salary,68000.0,outflow,expenses.csv,Salary
+2026-12-12,Utilities,8000.0,outflow,expenses.csv,Utilities
+2026-12-20,Loan Repayment,18000.0,outflow,expenses.csv,Loan Repayment
+2027-01-01,Rent,42000.0,outflow,expenses.csv,Rent
+2027-01-05,Salary,68000.0,outflow,expenses.csv,Salary
+2027-01-12,Utilities,8000.0,outflow,expenses.csv,Utilities
+2027-01-20,Loan Repayment,18000.0,outflow,expenses.csv,Loan Repayment
+2027-02-01,Rent,42000.0,outflow,expenses.csv,Rent
+2027-02-05,Salary,68000.0,outflow,expenses.csv,Salary
+2027-02-12,Utilities,8000.0,outflow,expenses.csv,Utilities
+2027-02-20,Loan Repayment,18000.0,outflow,expenses.csv,Loan Repayment
+2026-05-17,Campaign spend,6168.0,outflow,expenses.csv,Marketing
+2026-06-02,Campaign spend,6360.0,outflow,expenses.csv,Marketing
+2026-07-04,Campaign spend,6744.0,outflow,expenses.csv,Marketing
+2026-08-06,Campaign spend,7140.0,outflow,expenses.csv,Marketing
+2026-09-04,Campaign spend,7488.0,outflow,expenses.csv,Marketing

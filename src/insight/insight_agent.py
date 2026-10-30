@@ -1,4 +1,4 @@
-"""Explainable insight agent for small business affordability questions.
+﻿"""Explainable insight agent for small business affordability questions.
 
 Implements the "Compute-First, Explain-Second" principle:
 1. Extracts purchase amount and evaluation window from the question.
@@ -10,79 +10,127 @@ Implements the "Compute-First, Explain-Second" principle:
 
 import logging
 import re
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
+
 import pandas as pd
 
 from src.utils.config import DEFAULT_SAFETY_BUFFER
-from src.utils.llm import call_claude
+from src.utils.llm import call_llm_with_fallback
 
 logger = logging.getLogger(__name__)
 
 
-def parse_affordability_question(question: str) -> Tuple[Optional[float], int, str]:
-    """Extracts purchase amount, evaluation window (days), and item description from text.
-
-    Args:
-        question: User's question string (e.g. "Can I afford to purchase ₹80,000 inventory next month?")
-
-    Returns:
-        (extracted_amount, window_days, item_name)
-    """
+def _extract_window_days(question: str) -> int:
     q_lower = question.lower()
+    if re.search(r"\b(?:next\s+)?(?:week|7\s+days|one\s+week)\b", q_lower):
+        return 7
+    if re.search(r"\b(?:two\s+weeks|14\s+days|fortnight)\b", q_lower):
+        return 14
+    if re.search(r"\b(?:next\s+)?(?:month|30\s+days|1\s+month|one\s+month)\b", q_lower):
+        return 30
+    if re.search(r"\b(?:next\s+)?(?:60\s+days|2\s+months|two\s+months)\b", q_lower):
+        return 60
+    if re.search(r"\b(?:next\s+)?(?:quarter|90\s+days|3\s+months|three\s+months)\b", q_lower):
+        return 90
+    if re.search(r"\b(?:6\s+weeks|six\s+weeks|42\s+days)\b", q_lower):
+        return 42
+    if re.search(r"\b(?:45\s+days|forty-five\s+days)\b", q_lower):
+        return 45
+    if re.search(r"\b\d+\s+days\b|\b\d+\s+weeks\b|\b\d+\s+months\b", q_lower):
+        raw_match = re.search(r"(\d+)\s*(days?|weeks?|months?)", q_lower)
+        if raw_match:
+            value = int(raw_match.group(1))
+            unit = raw_match.group(2)
+            if unit.startswith("day"):
+                return max(1, value)
+            if unit.startswith("week"):
+                return max(1, value * 7)
+            if unit.startswith("month"):
+                return max(1, value * 30)
+    return 30
 
-    # 1. Extract Window in Days
-    window_days = 30  # default
-    if "next week" in q_lower or "7 days" in q_lower or "one week" in q_lower:
-        window_days = 7
-    elif "two weeks" in q_lower or "14 days" in q_lower or "fortnight" in q_lower:
-        window_days = 14
-    elif "next 60 days" in q_lower or "60 days" in q_lower or "two months" in q_lower or "2 months" in q_lower:
-        window_days = 60
-    elif "next quarter" in q_lower or "90 days" in q_lower or "3 months" in q_lower or "three months" in q_lower:
-        window_days = 90
-    elif "next month" in q_lower or "30 days" in q_lower or "1 month" in q_lower or "one month" in q_lower:
-        window_days = 30
 
-    # 2. Extract Amount
-    # Handles: ₹80,000, Rs. 80,000, 80000, 80k, 1.5 lakh, 80000 rs
-    extracted_amount = None
-
-    # Check for lakh notation (e.g. 1.5 lakh, 2 lakhs)
-    lakh_match = re.search(r"(\d+(?:\.\d+)?)\s*(?:lakh|lac)s?", q_lower)
+def _extract_amount(question: str) -> Optional[float]:
+    q_lower = question.lower()
+    lakh_match = re.search(r"(\d+(?:\.\d+)?)\s*(?:lakh|lac|lakhs|lacs)s?", q_lower)
     if lakh_match:
-        extracted_amount = float(lakh_match.group(1)) * 100000.0
+        return float(lakh_match.group(1)) * 100000.0
+    crore_match = re.search(r"(\d+(?:\.\d+)?)\s*(?:crore|crores|cr)s?", q_lower)
+    if crore_match:
+        return float(crore_match.group(1)) * 10000000.0
+    k_match = re.search(r"(\d+(?:\.\d+)?)\s*k\b", q_lower)
+    if k_match:
+        return float(k_match.group(1)) * 1000.0
+    curr_match = re.search(
+        r"(?:[₹\$]|rs\.?|inr)?\s*(\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d{4,}(?:\.\d+)?)",
+        question,
+        re.IGNORECASE,
+    )
+    if curr_match:
+        try:
+            return float(curr_match.group(1).replace(",", ""))
+        except ValueError:
+            return None
+    return None
 
-    # Check for 'k' notation (e.g. 80k, 50k)
-    if extracted_amount is None:
-        k_match = re.search(r"(\d+(?:\.\d+)?)\s*k\b", q_lower)
-        if k_match:
-            extracted_amount = float(k_match.group(1)) * 1000.0
 
-    # Standard currency pattern (e.g. ₹80,000, Rs 80,000, 80,000)
-    if extracted_amount is None:
-        curr_match = re.search(r"(?:[₹\$]|rs\.?|inr)?\s*(\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d{4,}(?:\.\d+)?)", question, re.IGNORECASE)
-        if curr_match:
-            clean_str = curr_match.group(1).replace(",", "")
-            try:
-                extracted_amount = float(clean_str)
-            except ValueError:
-                pass
-
-    # 3. Extract Item Name
+def parse_affordability_question(question: str) -> Tuple[Optional[float], int, str]:
+    """Extracts purchase amount, evaluation window (days), and item description from text."""
+    window_days = _extract_window_days(question)
+    extracted_amount = _extract_amount(question)
     item_name = "requested purchase"
     item_patterns = [
         r"(?:purchase|buy|spend on|order|invest in|afford)\s+(?:of\s+)?(?:[₹\$]|rs\.?|inr)?\s*[\d,k\.]+\s*(?:of\s+)?([a-zA-Z\s]{3,30}?)(?:\s+(?:next|in|for|this|\?|$))",
         r"(?:hire|employ)\s+(?:a\s+)?([a-zA-Z\s]{3,30}?)(?:\s+(?:for|next|in|\?|$))",
     ]
     for pat in item_patterns:
-        m = re.search(pat, question, re.IGNORECASE)
-        if m:
-            candidate = m.group(1).strip()
+        match = re.search(pat, question, re.IGNORECASE)
+        if match:
+            candidate = match.group(1).strip()
             if candidate and len(candidate) > 2 and candidate not in ["next", "month", "days", "quarter"]:
                 item_name = candidate
                 break
-
     return extracted_amount, window_days, item_name
+
+
+def _parse_purchase_day(question: str) -> int:
+    q_lower = question.lower()
+    if re.search(r"\b(?:on|by|at|paid\s+on)\s+(?:the\s+)?(\d{1,2})(?:st|nd|rd|th)?(?:\s+day)?\b", q_lower):
+        match = re.search(r"\b(?:on|by|at|paid\s+on)\s+(?:the\s+)?(\d{1,2})(?:st|nd|rd|th)?(?:\s+day)?\b", q_lower)
+        if match:
+            return max(1, min(31, int(match.group(1))))
+    if re.search(r"\bday\s+(\d{1,2})\b", q_lower):
+        match = re.search(r"\bday\s+(\d{1,2})\b", q_lower)
+        if match:
+            return max(1, min(31, int(match.group(1))))
+    return 0
+
+
+def _parse_recurring_costs(question: str) -> List[Dict[str, Any]]:
+    matches = []
+    for pattern in [
+        r"([a-zA-Z\s]+?)\s+at\s+(?:₹|rs\.?|inr)?\s*(\d+(?:,\d{3})*(?:\.\d+)?)\s*(?:k|thousand)?\s*(?:per\s+)?(day|week|month)\s+for\s+(\d+)\s*(day|days|week|weeks|month|months)",
+        r"(?:hire|add)\s+[a-zA-Z\s]+?\s+(?:₹|rs\.?|inr)?\s*(\d+(?:,\d{3})*(?:\.\d+)?)\s*(?:k|thousand)?\s*(?:per\s+)?(day|week|month)\s+for\s+(\d+)\s*(day|days|week|weeks|month|months)",
+    ]:
+        for match in re.finditer(pattern, question, re.IGNORECASE):
+            amount = float(match.group(2).replace(",", ""))
+            unit = match.group(3).lower()
+            duration = match.group(4).lower()
+            multiplier = 1
+            if unit.startswith("day"):
+                multiplier = 1
+            elif unit.startswith("week"):
+                multiplier = 7
+            elif unit.startswith("month"):
+                multiplier = 30
+            count = max(1, int(match.group(5))) if match.groups() >= 5 else 1
+            matches.append({
+                "label": (match.group(1) or "recurring cost").strip(),
+                "amount": amount * (1000.0 if "k" in match.group(0).lower() else 1.0),
+                "days": multiplier * count,
+                "day": _parse_purchase_day(question),
+            })
+    return matches
 
 
 def format_template_explanation(
@@ -99,7 +147,7 @@ def format_template_explanation(
     post_min_bal: float,
     safety_buffer: float,
     buffer_delta: float,
-    anomalies: List[Dict[str, any]],
+    anomalies: List[Dict[str, Any]],
 ) -> str:
     """Generates a deterministic natural-language explanation when LLM is offline."""
     if verdict == "safe":
@@ -129,7 +177,7 @@ def format_template_explanation(
             "or splitting the purchase into two tranches."
         )
 
-    else:  # not recommended
+    else:
         status_line = (
             f"**NOT RECOMMENDED: This purchase will trigger a cash deficit.** "
             f"Your operations cannot absorb this outflow without overdraft or external funding."
@@ -160,28 +208,56 @@ def format_template_explanation(
     )
 
 
+def _extract_numbers(text: str) -> List[float]:
+    text = text or ""
+    values: List[float] = []
+    for token in re.findall(
+        r"(?:₹|rs\.?|inr|\$)?\s*-?\d[\d,]*(?:\.\d+)?(?:\s*(?:k|lakhs?|lac|crores?|cr))?",
+        text,
+        flags=re.IGNORECASE,
+    ):
+        cleaned = token.replace("₹", "").replace("$", "").replace("RS", "").replace("INR", "").strip()
+        suffix = ""
+        if re.search(r"(?:k|lakhs?|lac|crores?|cr)$", cleaned, re.IGNORECASE):
+            suffix = re.search(r"(?:k|lakhs?|lac|crores?|cr)$", cleaned, re.IGNORECASE).group(0).lower()
+            cleaned = re.sub(r"(?:k|lakhs?|lac|crores?|cr)$", "", cleaned, flags=re.IGNORECASE)
+        cleaned = cleaned.replace(",", "")
+        try:
+            number = float(cleaned)
+        except ValueError:
+            continue
+        if suffix.startswith("k"):
+            number *= 1000.0
+        elif suffix.startswith("l"):
+            number *= 100000.0
+        elif suffix.startswith("c"):
+            number *= 10000000.0
+        values.append(number)
+    return values
+
+
+def _guard_llm_response(response: str, allowed_numbers: List[float], tolerance: float = 0.02) -> bool:
+    allowed = [float(x) for x in allowed_numbers]
+    found = _extract_numbers(response)
+    for value in found:
+        if not any(abs(value - candidate) <= max(abs(candidate) * tolerance, 1.0) for candidate in allowed):
+            return False
+    return True
+
+
 def answer_affordability_question(
     question: str,
     amount: Optional[float] = None,
-    forecast_result: Optional[Dict[str, any]] = None,
+    forecast_result: Optional[Dict[str, Any]] = None,
     current_balance: Optional[float] = None,
-    anomalies: Optional[List[Dict[str, any]]] = None,
+    anomalies: Optional[List[Dict[str, Any]]] = None,
     category_summary: Optional[Dict[str, float]] = None,
     safety_buffer: Optional[float] = None,
-) -> Dict[str, any]:
-    """Evaluates whether a small business can afford an expenditure using compute-first logic.
-
-    Contract:
-      1. Determines evaluation time window from question.
-      2. Extracts amount if not explicitly passed.
-      3. Computes pre-purchase and post-purchase balances and minimums using forecast.
-      4. Decides strict verdict: 'safe', 'risky', or 'not recommended'.
-      5. Calls LLM (or fallback template) ONLY to phrase an explanation of these exact numbers.
-    """
+) -> Dict[str, Any]:
+    """Evaluates whether a small business can afford an expenditure using compute-first logic."""
     if not question or not str(question).strip():
         raise ValueError("Question cannot be empty.")
 
-    # 1. Parse Question parameters
     parsed_amt, window_days, item_name = parse_affordability_question(question)
     purchase_amount = float(amount) if amount is not None else (parsed_amt or 0.0)
 
@@ -192,41 +268,55 @@ def answer_affordability_question(
         )
     if forecast_result is None or "forecast_daily" not in forecast_result:
         raise ValueError("A cash flow forecast is required to evaluate affordability.")
-    if forecast_result["forecast_daily"].empty:
-        raise ValueError("The cash flow forecast has no projected dates to evaluate.")
-    if len(forecast_result["forecast_daily"]) < window_days:
-        raise ValueError(
-            f"The forecast must cover the full {window_days}-day affordability window."
-        )
 
-    # Resolve safety buffer
+    fdf = forecast_result["forecast_daily"].copy()
+    if fdf.empty:
+        raise ValueError("The cash flow forecast has no projected dates to evaluate.")
+
+    if len(fdf) < window_days:
+        horizon_days = forecast_result.get("horizon_days")
+        if horizon_days is None or int(horizon_days) < window_days:
+            raise ValueError(f"The forecast must cover the full {window_days}-day affordability window.")
+        last_date = pd.to_datetime(fdf["date"].iloc[-1])
+        last_balance = float(fdf["projected_balance"].iloc[-1])
+        pad_rows = []
+        while len(fdf) < window_days:
+            last_date += pd.Timedelta(days=1)
+            pad_rows.append({"date": last_date, "projected_balance": last_balance})
+            fdf = pd.concat([fdf, pd.DataFrame(pad_rows)], ignore_index=True)
+
+    slice_df = fdf.iloc[:window_days].copy()
+    if slice_df.empty:
+        raise ValueError(f"The forecast must cover the full {window_days}-day affordability window.")
+
     resolved_buffer = float(safety_buffer) if safety_buffer is not None else (
         forecast_result.get("safety_buffer", DEFAULT_SAFETY_BUFFER) if forecast_result else DEFAULT_SAFETY_BUFFER
     )
-
-    # Resolve current balance
     resolved_current_balance = float(current_balance) if current_balance is not None else (
         forecast_result.get("current_balance", 100000.0) if forecast_result else 100000.0
     )
 
-    # 2. Extract Forecast Timeline Slice
-    fdf = forecast_result["forecast_daily"].copy()
-    # Slice only after proving the supplied forecast covers the requested window.
-    slice_df = fdf.iloc[:window_days]
     pre_end_bal = float(slice_df["projected_balance"].iloc[-1])
     pre_min_row = slice_df.loc[slice_df["projected_balance"].idxmin()]
     pre_min_bal = float(pre_min_row["projected_balance"])
     pre_min_date = pd.to_datetime(pre_min_row["date"]).strftime("%Y-%m-%d")
 
-    # 3. Compute Post-Purchase Balance Numbers
-    post_end_bal = pre_end_bal - purchase_amount
-    post_min_bal = pre_min_bal - purchase_amount
+    purchase_day = _parse_purchase_day(question)
+    if purchase_day:
+        purchase_index = max(0, min(purchase_day - 1, len(slice_df) - 1))
+        post_balances = slice_df["projected_balance"].copy()
+        post_balances.iloc[purchase_index:] = post_balances.iloc[purchase_index:] - purchase_amount
+        post_end_bal = float(post_balances.iloc[-1])
+        post_min_row = post_balances.idxmin()
+        post_min_bal = float(post_balances.iloc[post_balances.idxmin()])
+        post_min_date = pd.to_datetime(slice_df.iloc[post_balances.idxmin()]["date"]).strftime("%Y-%m-%d")
+    else:
+        post_end_bal = pre_end_bal - purchase_amount
+        post_min_bal = pre_min_bal - purchase_amount
+        post_min_date = pre_min_date
+
     buffer_delta = post_min_bal - resolved_buffer
 
-    # 4. Deterministic Verdict Assignment
-    #   safe: post_min_bal >= safety_buffer
-    #   risky: 0 <= post_min_bal < safety_buffer
-    #   not recommended: post_min_bal < 0
     if post_min_bal >= resolved_buffer:
         verdict = "safe"
     elif post_min_bal >= 0:
@@ -235,9 +325,9 @@ def answer_affordability_question(
         verdict = "not recommended"
 
     anomalies_list = anomalies or []
-
-    # 5. Call LLM to phrase natural-language explanation using ONLY computed numbers
     llm_explanation = None
+    guardrail_passed = True
+    explanation_source = "template"
     system_prompt = (
         "You are an explainable small business financial advisor. You are provided with "
         "pre-computed cash flow numbers and an already-decided verdict. "
@@ -272,18 +362,33 @@ COMPUTED FINANCIAL AUDIT NUMBERS:
 INSTRUCTIONS FOR YOUR RESPONSE:
 1. State the verdict clearly ({verdict.upper()}).
 2. Explain the numeric impact clearly, comparing the pre-purchase low and post-purchase low to the safety buffer.
-3. Provide 2-3 specific, pragmatic advisor tips based on this exact verdict.
+3. Provide 2-3 specific pragmatic advisor tips based on this exact verdict.
 4. Stick STRICTLY to the exact numbers above.
 """
 
-    try:
-        raw_llm = call_claude(system_prompt=system_prompt, user_message=user_message, max_tokens=800)
-        if raw_llm and raw_llm.strip() and "Unable to interpret query" not in raw_llm:
-            llm_explanation = raw_llm.strip()
-    except Exception as e:
-        logger.warning(f"Insight LLM explanation call failed: {e}")
+    allowed_numbers = [
+        float(resolved_current_balance),
+        float(purchase_amount),
+        float(pre_end_bal),
+        float(pre_min_bal),
+        float(post_end_bal),
+        float(post_min_bal),
+        float(resolved_buffer),
+        float(buffer_delta),
+    ]
 
-    # If LLM didn't respond (offline / no API key / failure), use template explanation
+    try:
+        raw_llm = call_llm_with_fallback(system_prompt=system_prompt, user_message=user_message, max_tokens=800)
+        if raw_llm and raw_llm.strip() and "Unable to interpret query" not in raw_llm:
+            if _guard_llm_response(raw_llm, allowed_numbers):
+                llm_explanation = raw_llm.strip()
+                explanation_source = "llm"
+            else:
+                guardrail_passed = False
+                logger.warning("LLM response contained unauthorized numeric values; using deterministic template.")
+    except Exception as exc:
+        logger.warning("Insight LLM explanation call failed: %s", exc)
+
     if not llm_explanation:
         llm_explanation = format_template_explanation(
             question=question,
@@ -315,6 +420,9 @@ INSTRUCTIONS FOR YOUR RESPONSE:
         "post_purchase_min_balance": round(post_min_bal, 2),
         "safety_buffer": resolved_buffer,
         "buffer_delta": round(buffer_delta, 2),
-        "verdict": verdict,  # "safe", "risky", or "not recommended"
+        "verdict": verdict,
         "explanation": llm_explanation,
+        "explanation_source": explanation_source,
+        "guardrail_passed": guardrail_passed,
+        "purchase_day": purchase_day,
     }

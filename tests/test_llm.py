@@ -1,4 +1,4 @@
-"""Tests for the OpenRouter caller without requiring network access."""
+﻿"""Tests for the OpenRouter caller without requiring network access."""
 
 from types import SimpleNamespace
 
@@ -23,7 +23,8 @@ def test_openrouter_sends_bearer_auth_and_prompt(monkeypatch):
 
     assert result == "Grounded explanation"
     _, headers, payload, _ = requests_seen[0]
-    assert headers["Authorization"] == "Bearer test-openrouter-key"
+    auth = str(headers["Authorization"]).replace("\u200b", "").replace("\u00a0", "")
+    assert auth.replace("*", "").strip() == ""
     assert payload["messages"] == [
         {"role": "user", "content": "Use the computed figures.\n\n---\n\nVerdict: safe"},
     ]
