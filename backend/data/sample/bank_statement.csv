@@ -1,0 +1,91 @@
+date,description,amount,direction,source_file,balance
+2026-05-03,POS settlement 1,30965.66,inflow,bank_statement.csv,203765.66
+2026-05-04,POS settlement 2,16831.89,inflow,bank_statement.csv,220597.55
+2026-05-05,POS settlement 3,19059.48,inflow,bank_statement.csv,239657.03
+2026-05-06,POS settlement 4,19365.09,inflow,bank_statement.csv,259022.12
+2026-05-07,POS settlement 5,15970.29,inflow,bank_statement.csv,274992.41
+2026-05-08,POS settlement 6,16820.93,inflow,bank_statement.csv,291813.34
+2026-05-09,POS settlement 7,31521.32,inflow,bank_statement.csv,316134.66
+2026-05-10,POS settlement 8,31096.64,inflow,bank_statement.csv,347231.3
+2026-05-11,POS settlement 9,18553.72,inflow,bank_statement.csv,365785.02
+2026-05-12,POS settlement 10,17603.01,inflow,bank_statement.csv,383388.03
+2026-05-13,POS settlement 11,19728.45,inflow,bank_statement.csv,403116.48
+2026-05-14,POS settlement 12,19646.32,inflow,bank_statement.csv,422762.8
+2026-05-15,POS settlement 13,18824.87,inflow,bank_statement.csv,434387.67
+2026-05-16,POS settlement 14,33263.13,inflow,bank_statement.csv,467650.8
+2026-05-17,POS settlement 15,32501.22,inflow,bank_statement.csv,500152.02
+2026-05-18,POS settlement 16,17766.85,inflow,bank_statement.csv,517918.87
+2026-05-19,POS settlement 17,19242.16,inflow,bank_statement.csv,537161.03
+2026-05-20,POS settlement 18,17642.67,inflow,bank_statement.csv,554803.7
+2026-05-21,POS settlement 19,19833.22,inflow,bank_statement.csv,567436.92
+2026-05-22,POS settlement 20,18697.13,inflow,bank_statement.csv,586134.05
+2026-05-23,POS settlement 21,31614.81,inflow,bank_statement.csv,617748.86
+2026-05-24,POS settlement 22,30956.85,inflow,bank_statement.csv,648705.71
+2026-05-25,POS settlement 23,20113.85,inflow,bank_statement.csv,668819.56
+2026-05-26,POS settlement 24,18411.13,inflow,bank_statement.csv,687230.69
+2026-05-27,POS settlement 25,18026.38,inflow,bank_statement.csv,698057.07
+2026-05-28,POS settlement 26,18056.22,inflow,bank_statement.csv,716113.29
+2026-05-29,POS settlement 27,19051.17,inflow,bank_statement.csv,735164.46
+2026-05-30,POS settlement 28,31619.77,inflow,bank_statement.csv,766784.23
+2026-05-31,POS settlement 29,31550.86,inflow,bank_statement.csv,798335.09
+2026-06-01,POS settlement 30,18708.38,inflow,bank_statement.csv,817043.47
+2026-06-02,POS settlement 31,20682.87,inflow,bank_statement.csv,830526.34
+2026-06-03,POS settlement 32,17545.57,inflow,bank_statement.csv,848071.91
+2026-06-04,POS settlement 33,17338.61,inflow,bank_statement.csv,865410.52
+2026-06-05,POS settlement 34,16897.28,inflow,bank_statement.csv,882307.8
+2026-06-06,POS settlement 35,30991.64,inflow,bank_statement.csv,913299.44
+2026-06-07,POS settlement 36,31477.7,inflow,bank_statement.csv,944777.14
+2026-06-08,POS settlement 37,17509.25,inflow,bank_statement.csv,955086.39
+2026-06-09,POS settlement 38,16567.94,inflow,bank_statement.csv,971654.33
+2026-06-10,POS settlement 39,16521.14,inflow,bank_statement.csv,988175.47
+2026-06-11,POS settlement 40,18230.5,inflow,bank_statement.csv,1006405.97
+2026-06-12,POS settlement 41,18286.46,inflow,bank_statement.csv,1024692.43
+2026-06-13,POS settlement 42,30138.93,inflow,bank_statement.csv,1054831.36
+2026-06-14,POS settlement 43,28616.05,inflow,bank_statement.csv,1076247.41
+2026-06-15,POS settlement 44,17545.66,inflow,bank_statement.csv,1093793.07
+2026-06-16,POS settlement 45,17378.74,inflow,bank_statement.csv,1111171.81
+2026-06-17,POS settlement 46,17480.4,inflow,bank_statement.csv,1128652.21
+2026-06-18,POS settlement 47,18250.76,inflow,bank_statement.csv,1146902.97
+2026-06-19,POS settlement 48,17468.38,inflow,bank_statement.csv,1164371.35
+2026-06-20,POS settlement 49,30059.91,inflow,bank_statement.csv,1187231.26
+2026-06-21,POS settlement 50,29344.96,inflow,bank_statement.csv,1216576.22
+2026-06-22,POS settlement 51,17579.8,inflow,bank_statement.csv,1234156.02
+2026-06-23,POS settlement 52,18016.89,inflow,bank_statement.csv,1252172.91
+2026-06-24,POS settlement 53,15544.65,inflow,bank_statement.csv,1267717.56
+2026-06-25,POS settlement 54,16950.58,inflow,bank_statement.csv,1284668.14
+2026-06-26,POS settlement 55,16817.34,inflow,bank_statement.csv,1294285.48
+2026-06-27,POS settlement 56,28873.81,inflow,bank_statement.csv,1323159.29
+2026-06-28,POS settlement 57,29411.31,inflow,bank_statement.csv,1352570.6
+2026-06-29,POS settlement 58,19353.38,inflow,bank_statement.csv,1371923.98
+2026-06-30,POS settlement 59,16589.32,inflow,bank_statement.csv,1388513.3
+2026-07-01,POS settlement 60,18862.83,inflow,bank_statement.csv,1407376.13
+2026-07-02,POS settlement 61,15757.02,inflow,bank_statement.csv,1415933.15
+2026-07-03,POS settlement 62,17452.41,inflow,bank_statement.csv,1433385.56
+2026-07-04,POS settlement 63,30682.3,inflow,bank_statement.csv,1464067.86
+2026-07-05,POS settlement 64,31326.33,inflow,bank_statement.csv,1495394.19
+2026-07-06,POS settlement 65,18946.71,inflow,bank_statement.csv,1514340.9
+2026-07-07,POS settlement 66,19124.11,inflow,bank_statement.csv,1533465.01
+2026-07-08,POS settlement 67,17830.76,inflow,bank_statement.csv,1544095.77
+2026-07-09,POS settlement 68,17769.06,inflow,bank_statement.csv,1561864.83
+2026-07-10,POS settlement 69,19424.86,inflow,bank_statement.csv,1581289.69
+2026-07-11,POS settlement 70,31157.11,inflow,bank_statement.csv,1612446.8
+2026-09-01,Rent,42000.0,outflow,bank_statement.csv,1570446.8
+2026-09-05,Salary,68000.0,outflow,bank_statement.csv,1502446.8
+2026-09-12,Utilities,8000.0,outflow,bank_statement.csv,1494446.8
+2026-09-20,Loan Repayment,18000.0,outflow,bank_statement.csv,1476446.8
+2026-10-01,Rent,42000.0,outflow,bank_statement.csv,1434446.8
+2026-10-05,Salary,68000.0,outflow,bank_statement.csv,1366446.8
+2026-10-12,Utilities,8000.0,outflow,bank_statement.csv,1358446.8
+2026-10-20,Loan Repayment,18000.0,outflow,bank_statement.csv,1340446.8
+2026-10-01,Rent,42000.0,outflow,bank_statement.csv,1298446.8
+2026-10-05,Salary,68000.0,outflow,bank_statement.csv,1230446.8
+2026-10-12,Utilities,8000.0,outflow,bank_statement.csv,1222446.8
+2026-10-20,Loan Repayment,18000.0,outflow,bank_statement.csv,1204446.8
+2026-11-01,Rent,42000.0,outflow,bank_statement.csv,1162446.8
+2026-11-05,Salary,68000.0,outflow,bank_statement.csv,1094446.8
+2026-11-12,Utilities,8000.0,outflow,bank_statement.csv,1086446.8
+2026-11-20,Loan Repayment,18000.0,outflow,bank_statement.csv,1068446.8
+2026-12-01,Rent,42000.0,outflow,bank_statement.csv,1026446.8
+2026-12-05,Salary,68000.0,outflow,bank_statement.csv,958446.8
+2026-12-12,Utilities,8000.0,outflow,bank_statement.csv,950446.8
+2026-12-20,Loan Repayment,18000.0,outflow,bank_statement.csv,932446.8

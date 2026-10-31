@@ -1,0 +1,17 @@
+__pycache__
+.pytest_cache
+.venv
+.venv/
+.git
+.gitignore
+node_modules
+npm-debug.log
+frontend/dist
+backend/.coverage
+.coverage
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.*
+.DS_Store

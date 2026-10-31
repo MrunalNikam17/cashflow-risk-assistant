@@ -1,0 +1,19 @@
+date,description,amount,direction,status,payment_date,source_file
+2026-09-25,Invoice #1001,12000.0,inflow,paid,2026-09-28,invoices.csv
+2026-09-23,Invoice #1002,14300.0,inflow,pending,,invoices.csv
+2026-09-21,Invoice #1003,16600.0,inflow,pending,,invoices.csv
+2026-09-19,Invoice #1004,17400.0,inflow,paid,2026-09-22,invoices.csv
+2026-09-17,Invoice #1005,19700.0,inflow,pending,,invoices.csv
+2026-09-15,Invoice #1006,22000.0,inflow,pending,,invoices.csv
+2026-09-13,Invoice #1007,22800.0,inflow,paid,2026-09-16,invoices.csv
+2026-09-11,Invoice #1008,25100.0,inflow,pending,,invoices.csv
+2026-09-09,Invoice #1009,27400.0,inflow,pending,,invoices.csv
+2026-09-07,Invoice #1010,28200.0,inflow,paid,2026-09-10,invoices.csv
+2026-09-05,Invoice #1011,30500.0,inflow,pending,,invoices.csv
+2026-09-03,Invoice #1012,32800.0,inflow,pending,,invoices.csv
+2026-09-01,Invoice #1013,33600.0,inflow,paid,2026-09-04,invoices.csv
+2026-08-30,Invoice #1014,35900.0,inflow,pending,,invoices.csv
+2026-08-28,Invoice #1015,38200.0,inflow,pending,,invoices.csv
+2026-08-26,Invoice #1016,39000.0,inflow,paid,2026-08-29,invoices.csv
+2026-08-24,Invoice #1017,41300.0,inflow,pending,,invoices.csv
+2026-08-22,Invoice #1018,43600.0,inflow,pending,,invoices.csv

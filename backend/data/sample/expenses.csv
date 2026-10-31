@@ -1,0 +1,34 @@
+date,description,amount,direction,source_file,category
+2026-09-01,Rent,42000.0,outflow,expenses.csv,Rent
+2026-09-05,Salary,68000.0,outflow,expenses.csv,Salary
+2026-09-12,Utilities,8000.0,outflow,expenses.csv,Utilities
+2026-09-20,Loan Repayment,18000.0,outflow,expenses.csv,Loan Repayment
+2026-10-01,Rent,42000.0,outflow,expenses.csv,Rent
+2026-10-05,Salary,68000.0,outflow,expenses.csv,Salary
+2026-10-12,Utilities,8000.0,outflow,expenses.csv,Utilities
+2026-10-20,Loan Repayment,18000.0,outflow,expenses.csv,Loan Repayment
+2026-10-01,Rent,42000.0,outflow,expenses.csv,Rent
+2026-10-05,Salary,68000.0,outflow,expenses.csv,Salary
+2026-10-12,Utilities,8000.0,outflow,expenses.csv,Utilities
+2026-10-20,Loan Repayment,18000.0,outflow,expenses.csv,Loan Repayment
+2026-11-01,Rent,42000.0,outflow,expenses.csv,Rent
+2026-11-05,Salary,68000.0,outflow,expenses.csv,Salary
+2026-11-12,Utilities,8000.0,outflow,expenses.csv,Utilities
+2026-11-20,Loan Repayment,18000.0,outflow,expenses.csv,Loan Repayment
+2026-12-01,Rent,42000.0,outflow,expenses.csv,Rent
+2026-12-05,Salary,68000.0,outflow,expenses.csv,Salary
+2026-12-12,Utilities,8000.0,outflow,expenses.csv,Utilities
+2026-12-20,Loan Repayment,18000.0,outflow,expenses.csv,Loan Repayment
+2027-01-01,Rent,42000.0,outflow,expenses.csv,Rent
+2027-01-05,Salary,68000.0,outflow,expenses.csv,Salary
+2027-01-12,Utilities,8000.0,outflow,expenses.csv,Utilities
+2027-01-20,Loan Repayment,18000.0,outflow,expenses.csv,Loan Repayment
+2027-02-01,Rent,42000.0,outflow,expenses.csv,Rent
+2027-02-05,Salary,68000.0,outflow,expenses.csv,Salary
+2027-02-12,Utilities,8000.0,outflow,expenses.csv,Utilities
+2027-02-20,Loan Repayment,18000.0,outflow,expenses.csv,Loan Repayment
+2026-05-17,Campaign spend,6168.0,outflow,expenses.csv,Marketing
+2026-06-02,Campaign spend,6360.0,outflow,expenses.csv,Marketing
+2026-07-04,Campaign spend,6744.0,outflow,expenses.csv,Marketing
+2026-08-06,Campaign spend,7140.0,outflow,expenses.csv,Marketing
+2026-09-04,Campaign spend,7488.0,outflow,expenses.csv,Marketing
