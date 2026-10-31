@@ -8,6 +8,7 @@
 """
 
 import sys
+from html import escape
 from pathlib import Path
 
 # Add project root to sys.path so src imports work smoothly
@@ -50,17 +51,19 @@ CUSTOM_CSS = """
 
 html, body, [class*="css"] {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-color);
+    background: var(--background-color);
 }
 
 /* Header & Banner styling */
 .main-header {
     background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
-    color: white;
+    color: #f8fafc;
     padding: 1.8rem 2.2rem;
     border-radius: 16px;
     margin-bottom: 1.5rem;
     box-shadow: 0 10px 25px -5px rgba(30, 27, 75, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 .main-header h1 {
     margin: 0;
@@ -71,54 +74,65 @@ html, body, [class*="css"] {
 }
 .main-header p {
     margin: 0.4rem 0 0 0;
-    color: #c7d2fe;
+    color: #dfe7ff;
     font-size: 1.05rem;
 }
 
 /* Metric Cards */
 .metric-card {
-    background: #ffffff;
+    background: var(--secondary-background-color);
+    color: var(--text-color);
     border-radius: 12px;
     padding: 1.2rem 1.4rem;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.08);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .metric-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.12);
 }
 .metric-title {
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #64748b;
+    color: var(--text-color);
+    opacity: 0.75;
     margin-bottom: 0.4rem;
 }
 .metric-value {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #0f172a;
+    color: var(--text-color);
     line-height: 1.2;
 }
 .metric-subtext {
     font-size: 0.8rem;
-    color: #94a3b8;
+    color: var(--text-color);
+    opacity: 0.7;
     margin-top: 0.3rem;
 }
 
 /* Verdict Banners */
 .verdict-banner-safe {
-    background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+    background: linear-gradient(135deg, rgba(6, 95, 70, 0.96) 0%, rgba(4, 120, 87, 0.95) 100%);
     color: #ecfdf5;
     padding: 1.4rem 1.8rem;
     border-radius: 12px;
     border-left: 8px solid #10b981;
     margin: 1rem 0;
 }
+.verdict-banner-safe h3,
+.verdict-banner-safe p,
+.verdict-banner-risky h3,
+.verdict-banner-risky p,
+.verdict-banner-not-recommended h3,
+.verdict-banner-not-recommended p {
+    color: inherit;
+}
 .verdict-banner-risky {
-    background: linear-gradient(135deg, #92400e 0%, #b45309 100%);
+    background: linear-gradient(135deg, rgba(146, 64, 14, 0.95) 0%, rgba(180, 83, 9, 0.95) 100%);
     color: #fffbeb;
     padding: 1.4rem 1.8rem;
     border-radius: 12px;
@@ -126,7 +140,7 @@ html, body, [class*="css"] {
     margin: 1rem 0;
 }
 .verdict-banner-not-recommended {
-    background: linear-gradient(135deg, #881337 0%, #be123c 100%);
+    background: linear-gradient(135deg, rgba(136, 19, 55, 0.96) 0%, rgba(190, 18, 60, 0.95) 100%);
     color: #fff1f2;
     padding: 1.4rem 1.8rem;
     border-radius: 12px;
@@ -136,16 +150,16 @@ html, body, [class*="css"] {
 
 /* Chips & Tags */
 .badge-inflow {
-    background-color: #d1fae5;
-    color: #065f46;
+    background-color: rgba(16, 185, 129, 0.18);
+    color: #d1fae5;
     padding: 0.2rem 0.6rem;
     border-radius: 9999px;
     font-size: 0.75rem;
     font-weight: 600;
 }
 .badge-outflow {
-    background-color: #fee2e2;
-    color: #991b1b;
+    background-color: rgba(239, 68, 68, 0.18);
+    color: #fecaca;
     padding: 0.2rem 0.6rem;
     border-radius: 9999px;
     font-size: 0.75rem;
@@ -164,6 +178,12 @@ html, body, [class*="css"] {
 </style>
 """
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
+
+
+def sanitize_markdown_text(raw_text: str) -> str:
+    """Escape HTML and prevent LaTeX-like injections while preserving markdown formatting."""
+    return escape(raw_text, quote=False).replace("$", r"\$")
+
 
 # -------------------------------------------------------------
 # Session State Initialization
@@ -552,26 +572,20 @@ with tab3:
             st.markdown("#### 🚨 Flagged Irregular Expenses")
 
             for anom in anomalies:
-                sev_color = "#ef4444" if anom["severity"] == "High" else "#f59e0b"
-                badge = f"<span style='background-color:{sev_color}; color:white; padding:2px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;'>{anom['severity']} Priority</span>"
+                severity_label = "High Priority" if anom["severity"] == "High" else "Moderate Priority"
+                severity_icon = "🚨" if anom["severity"] == "High" else "⚠️"
 
-                st.markdown(
-                    f"""
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-left:6px solid {sev_color}; border-radius:10px; padding:1rem 1.2rem; margin-bottom:0.8rem; box-shadow:0 2px 4px rgba(0,0,0,0.03);">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-weight:700; font-size:1.1rem; color:#0f172a;">{anom['category']} — ₹{anom['amount']:,.2f}</span>
-                            <span>{badge}</span>
-                        </div>
-                        <div style="color:#475569; font-size:0.9rem; margin-top:0.3rem;">
-                            <strong>Description:</strong> {anom['description']} &nbsp;|&nbsp; <strong>Date:</strong> {anom['date']} &nbsp;|&nbsp; <strong>Method:</strong> {anom['detection_method']}
-                        </div>
-                        <div style="background:#f8fafc; border-radius:6px; padding:0.6rem 0.8rem; margin-top:0.6rem; color:#1e293b; font-size:0.92rem;">
-                            💡 <strong>Plain-Language Finding:</strong> {anom['reason']}
-                        </div>
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
+                with st.container(border=True):
+                    col_title, col_badge = st.columns([4, 1])
+                    with col_title:
+                        st.markdown(f"**{anom['category']} — ₹{anom['amount']:,.2f}**")
+                    with col_badge:
+                        st.caption(f"{severity_icon} {severity_label}")
+
+                    st.caption(
+                        f"Description: {anom['description']} | Date: {anom['date']} | Method: {anom['detection_method']}"
+                    )
+                    st.markdown(f"💡 **Plain-Language Finding:** {anom['reason']}")
 
 
 # =============================================================
@@ -644,36 +658,23 @@ with tab4:
                         # Verdict Banner
                         v = ans["verdict"]
                         if v == "safe":
-                            v_banner = f"""
-                            <div class="verdict-banner-safe">
-                                <h3 style="margin:0; font-size:1.4rem;">✅ VERDICT: SAFE TO PURCHASE</h3>
-                                <p style="margin:0.4rem 0 0 0; font-size:1.05rem;">
-                                    You can comfortably proceed with this ₹{ans['purchase_amount']:,.2f} expenditure.
-                                    Your cash reserves are projected to remain well above your ₹{ans['safety_buffer']:,.2f} safety buffer.
-                                </p>
-                            </div>
-                            """
+                            st.success(
+                                f"✅ VERDICT: SAFE TO PURCHASE\n\n"
+                                f"You can comfortably proceed with this ₹{ans['purchase_amount']:,.2f} expenditure. "
+                                f"Your cash reserves are projected to remain well above your ₹{ans['safety_buffer']:,.2f} safety buffer."
+                            )
                         elif v == "risky":
-                            v_banner = f"""
-                            <div class="verdict-banner-risky">
-                                <h3 style="margin:0; font-size:1.4rem;">⚠️ VERDICT: PROCEED WITH CAUTION (RISKY)</h3>
-                                <p style="margin:0.4rem 0 0 0; font-size:1.05rem;">
-                                    This ₹{ans['purchase_amount']:,.2f} purchase is positive, but dips below your
-                                    desired ₹{ans['safety_buffer']:,.2f} safety cushion.
-                                </p>
-                            </div>
-                            """
+                            st.warning(
+                                f"⚠️ VERDICT: PROCEED WITH CAUTION (RISKY)\n\n"
+                                f"This ₹{ans['purchase_amount']:,.2f} purchase is positive, but dips below your "
+                                f"desired ₹{ans['safety_buffer']:,.2f} safety cushion."
+                            )
                         else:
-                            v_banner = f"""
-                            <div class="verdict-banner-not-recommended">
-                                <h3 style="margin:0; font-size:1.4rem;">🛑 VERDICT: NOT RECOMMENDED (DEFICIT RISK)</h3>
-                                <p style="margin:0.4rem 0 0 0; font-size:1.05rem;">
-                                    Deducting ₹{ans['purchase_amount']:,.2f} will plunge your working capital into a negative
-                                    deficit of ₹{ans['post_purchase_min_balance']:,.2f}.
-                                </p>
-                            </div>
-                            """
-                        st.markdown(v_banner, unsafe_allow_html=True)
+                            st.error(
+                                f"🛑 VERDICT: NOT RECOMMENDED (DEFICIT RISK)\n\n"
+                                f"Deducting ₹{ans['purchase_amount']:,.2f} will plunge your working capital into a negative "
+                                f"deficit of ₹{ans['post_purchase_min_balance']:,.2f}."
+                            )
 
                         # Mathematical Breakdown Cards
                         st.markdown("#### 🔢 Computed Mathematical Audit (Pre-LLM Math)")
@@ -690,14 +691,8 @@ with tab4:
 
                         # Natural Language Explanation Card
                         st.markdown("#### 📜 Grounded Financial Advisor Explanation")
-                        st.markdown(
-                            f"""
-                            <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:1.5rem; box-shadow:0 4px 6px rgba(0,0,0,0.04); font-size:1rem; line-height:1.6;">
-                                {ans['explanation']}
-                            </div>
-                            """,
-                            unsafe_allow_html=True,
-                        )
+                        with st.container(border=True):
+                            st.markdown(sanitize_markdown_text(ans["explanation"]))
 
                     except Exception as e:
                         st.error(f"Error evaluating affordability: {e}")
