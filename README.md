@@ -169,7 +169,7 @@ cashflow-risk-assistant/
 ### 1. Clone & Setup Environment
 
 ```bash
-git clone https://github.com/your-username/cashflow-risk-assistant.git
+git clone https://github.com/MrunalNikam17/cashflow-risk-assistant.git
 cd cashflow-risk-assistant
 
 # Create and activate virtual environment
